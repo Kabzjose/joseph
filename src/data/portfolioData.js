@@ -37,7 +37,7 @@ export const PROJECTS = [
     description:
       "A full-stack class reminder application built with the MERN stack, allowing users to register, log in, and manage class schedules with reminders and a structured timetable view.",
     tech: ["React", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "Mongoose", "JWT", "bcryptjs"],
-    live: "https://class-reminder-orpin.vercel.app",
+    live: "https://class-reminder-frontend.vercel.app/",
     features: ["JWT Authentication", "Protected Routes", "CRUD Class Management", "Timetable View", "User-Specific Data Isolation"],
     color: "#22c55e",
   },
