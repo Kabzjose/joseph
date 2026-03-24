@@ -1,0 +1,101 @@
+export const NAV_LINKS = ["About", "Skills", "Projects", "Experience", "Contact"];
+
+export const SKILLS = {
+  Frontend: ["React", "TypeScript", "Vite", "Tailwind CSS","Bootstrap", "React Router", "HTML5", "CSS3"],
+  Backend: ["Node.js", "Express.js", "REST APIs", "JWT Auth", "Nodemailer", "Bcrypt", "Joi"],
+  Databases: ["PostgreSQL", "MongoDB", "Supabase", "Neon DB", "SQL"],
+  "Tools & Platforms": ["Git", "GitHub", "Linux", "Docker", "Vercel", "Render", "AWS","Postman"],
+  "UI/UX": ["Figma", "Responsive Design", "AOS Animations", "Component Design"],
+};
+
+export const PROJECTS = [
+  {
+    title: "Wildlife Tracker",
+    tagline: "Full-Stack Conservation Platform",
+    description:
+      "A full-stack web app for tracking wildlife, managing observations, and supporting conservation decisions through real-time data and AI image analysis.",
+    tech: ["React", "TypeScript", "Node.js", "PostgreSQL", "Supabase", "Leaflet", "Hugging Face AI"],
+    live: "https://wildlife-tracker-1.onrender.com",
+    api: "https://wildlife-tracker-qrv6.onrender.com",
+    features: ["AI Image Analysis", "Interactive Maps", "Role-Based Access", "Admin Dashboard", "Real-time Tracking"],
+    color: "#10b981",
+  },
+  {
+    title: "Job Tracker",
+    tagline: "Full-Stack Job Application Manager",
+    description:
+      "A complete job application tracking system with JWT auth, refresh token rotation, email-based password reset, and full CRUD for job listings.",
+    tech: ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "JWT", "Nodemailer"],
+    live: "https://job-tracker-wheat-kappa.vercel.app",
+    api: "https://job-tracker-backend-u6xr.onrender.com",
+    features: ["JWT + Refresh Tokens", "Email Reset Flow", "Job Stats Dashboard", "Filter by Status", "Protected Routes"],
+    color: "#3b82f6",
+  },
+  {
+    title: "Class Reminder App",
+    tagline: "MERN Stack Timetable & Reminder System",
+    description:
+      "A full-stack class reminder application built with the MERN stack, allowing users to register, log in, and manage class schedules with reminders and a structured timetable view.",
+    tech: ["React", "Vite", "Tailwind CSS", "Node.js", "Express.js", "MongoDB Atlas", "Mongoose", "JWT", "bcryptjs"],
+    live: "https://class-reminder-orpin.vercel.app",
+    features: ["JWT Authentication", "Protected Routes", "CRUD Class Management", "Timetable View", "User-Specific Data Isolation"],
+    color: "#22c55e",
+  },
+  {
+    title: "Summit Events",
+    tagline: "Premium Event Management Landing Page",
+    description:
+      "A high-end, fully responsive landing page for a Nairobi-based event management firm. Features scroll-triggered animations, dynamic navbar, and luxury aesthetic.",
+    tech: ["React", "Vite", "Tailwind CSS", "AOS Animations", "React Icons"],
+    live: "https://summit-mauve.vercel.app/",
+    features: ["Scroll Animations", "Mobile-First", "Dynamic Navbar", "Testimonials Grid", "Luxury Design"],
+    color: "#f59e0b",
+  },
+  {
+    title: "Peach State Drive",
+    tagline: "Car Hire Company Website",
+    description:
+      "A modern, responsive car hire company website built with vanilla HTML, CSS, and JavaScript with a clean UI for fleet and booking information.",
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    live: "https://kabzjose.github.io/peach-State-Drive-/",
+    features: ["Responsive Design", "Fleet Showcase", "Clean UI", "Vanilla JS"],
+    color: "#f97316",
+  },
+];
+
+export const EXPERIENCE = [
+  {
+    role: "BSc Software Engineering",
+    company: "Muranga University of Technology",
+    duration: "2023 - 2026",
+    desc: "Completed a Bachelor of Science degree in Software Engineering with focus on software architecture, full-stack development, databases, and real-world systems design.",
+  },
+  {
+    role: "Full-Stack Developer",
+    company: "Freelance / Self-Employed",
+    duration: "2025 - Present",
+    desc: "Building full-stack web applications for clients from React frontends to Node.js APIs and PostgreSQL databases, and handling deployment on Vercel and Render.",
+  },
+  {
+    role: "Database Administrator",
+    company: "Personal & Client Projects",
+    duration: "2023 - Present",
+    desc: "Designing, optimizing, and administering PostgreSQL and MongoDB databases with efficient schemas, indexing, and query optimization strategies.",
+  },
+  {
+    role: "UI/UX Designer",
+    company: "Freelance",
+    duration: "2022 - Present",
+    desc: "Designing clean, user-friendly interfaces using Figma and implementing them with React and Tailwind CSS with a mobile-first focus.",
+  },
+];
+
+export const CONTACT_LINKS = [
+  { label: "Email", value: "josekabz00@gmail.com", href: "mailto:josekabz00@gmail.com" },
+  { label: "Phone", value: "+254 718 047 199", href: "tel:+254718047199" },
+  { label: "WhatsApp", value: "+254 718 047 199", href: "https://wa.me/254718047199" },
+  { label: "GitHub", value: "github.com/kabzjose", href: "https://github.com/kabzjose" },
+  { label: "LinkedIn", value: "https://www.linkedin.com/in/joseph-ndungu-ab21293aa/", href: "https://www.linkedin.com/in/joseph-ndungu-ab21293aa/" },
+];
+
+export const CURRENTLY_LEARNING = ["Docker & Containerization", "AWS / Cloud Deployment", "React Native", "AI Integration"];
