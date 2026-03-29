@@ -6,11 +6,11 @@ export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section id="projects" className="bg-white px-6 py-28 dark:bg-slate-950">
+    <section id="projects" className="bg-slate-50 px-6 py-28 dark:bg-slate-950">
       <div className="mx-auto w-full max-w-6xl">
         <FadeIn>
           <div className="mb-14">
-            <p className="font-mono text-xs tracking-[0.32em] text-blue-700 dark:text-blue-300">03. PROJECTS</p>
+            <p className="font-mono text-xs tracking-[0.32em] text-blue-800 dark:text-blue-300">03. PROJECTS</p>
             <h2 className="mt-3 font-[Syne] text-4xl font-extrabold text-slate-900 dark:text-slate-100">Featured Work</h2>
           </div>
         </FadeIn>
@@ -22,7 +22,7 @@ export default function Projects() {
             return (
               <FadeIn key={project.title} delay={index * 0.08}>
                 <article
-                  className="relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-6 transition dark:border-slate-800 dark:bg-slate-900"
+                  className="relative overflow-hidden rounded-2xl border border-slate-300 bg-white p-6 shadow-sm transition dark:border-slate-800 dark:bg-slate-900"
                   style={{ boxShadow: isOpen ? `0 12px 35px ${project.color}20` : "none" }}
                 >
                   <div
@@ -48,13 +48,13 @@ export default function Projects() {
                     </a>
                   </div>
 
-                  <p className="mt-4 text-sm leading-7 text-slate-700 dark:text-slate-300">{project.description}</p>
+                  <p className="mt-4 text-sm leading-7 text-slate-800 dark:text-slate-300">{project.description}</p>
 
                   <div className="mt-4 flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="rounded-md border border-slate-300 bg-white px-2.5 py-1 font-mono text-xs text-slate-600 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300"
+                        className="rounded-md border border-slate-300 bg-slate-100 px-2.5 py-1 font-mono text-xs text-slate-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-300"
                       >
                         {tech}
                       </span>
@@ -64,7 +64,7 @@ export default function Projects() {
                   <div className="mt-5 flex flex-wrap gap-3">
                     <button
                       onClick={() => setActiveIndex(isOpen ? null : index)}
-                      className="rounded-md border border-slate-300 px-3 py-1.5 font-mono text-xs tracking-wide text-slate-700 transition hover:border-slate-400 dark:border-slate-700 dark:text-slate-200"
+                      className="rounded-md border border-slate-400 bg-white px-3 py-1.5 font-mono text-xs tracking-wide text-slate-800 transition hover:border-slate-500 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200"
                     >
                       {isOpen ? "Hide Details" : "View Details"}
                     </button>
@@ -73,7 +73,7 @@ export default function Projects() {
                         href={project.api}
                         target="_blank"
                         rel="noreferrer"
-                        className="rounded-md border border-blue-300 bg-blue-50 px-3 py-1.5 font-mono text-xs tracking-wide text-blue-700 transition hover:bg-blue-100 dark:border-blue-700 dark:bg-blue-500/10 dark:text-blue-200"
+                        className="rounded-md border border-blue-400 bg-blue-100 px-3 py-1.5 font-mono text-xs tracking-wide text-blue-800 transition hover:bg-blue-200 dark:border-blue-700 dark:bg-blue-500/10 dark:text-blue-200"
                       >
                         API Link
                       </a>

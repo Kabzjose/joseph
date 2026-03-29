@@ -16,23 +16,23 @@ export default function Footer() {
   );
 
   return (
-    <footer className="border-t border-slate-200 bg-slate-100 px-6 py-12 dark:border-slate-800 dark:bg-slate-950">
+    <footer className="border-t border-slate-300 bg-slate-50 px-6 py-12 dark:border-slate-800 dark:bg-slate-950">
       <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <h3 className="font-[Syne] text-2xl font-bold text-slate-900 dark:text-slate-100">Joseph Ndungu</h3>
-          <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+          <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">
             Full-Stack Developer and Database Administrator focused on building practical digital products and scalable systems.
           </p>
         </div>
 
         <div>
-          <p className="font-mono text-xs tracking-[0.2em] text-sky-700 dark:text-sky-300">QUICK LINKS</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-sky-800 dark:text-sky-300">QUICK LINKS</p>
           <div className="mt-4 space-y-2">
             {NAV_LINKS.map((link) => (
               <a
                 key={link}
                 href={`#${link.toLowerCase()}`}
-                className="block text-sm text-slate-600 transition hover:text-sky-600 dark:text-slate-300 dark:hover:text-sky-300"
+                className="block text-sm text-slate-700 transition hover:text-sky-700 dark:text-slate-300 dark:hover:text-sky-300"
               >
                 {link}
               </a>
@@ -41,10 +41,10 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="font-mono text-xs tracking-[0.2em] text-sky-700 dark:text-sky-300">SERVICES</p>
+          <p className="font-mono text-xs tracking-[0.2em] text-sky-800 dark:text-sky-300">SERVICES</p>
           <div className="mt-4 space-y-2">
             {SERVICES.map((item) => (
-              <p key={item} className="text-sm text-slate-600 dark:text-slate-300">
+              <p key={item} className="text-sm text-slate-700 dark:text-slate-300">
                 {item}
               </p>
             ))}
@@ -52,8 +52,8 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="font-mono text-xs tracking-[0.2em] text-sky-700 dark:text-sky-300">CONTACT INFO</p>
-          <div className="mt-4 space-y-2 text-sm text-slate-600 dark:text-slate-300">
+          <p className="font-mono text-xs tracking-[0.2em] text-sky-800 dark:text-sky-300">CONTACT INFO</p>
+          <div className="mt-4 space-y-2 text-sm text-slate-700 dark:text-slate-300">
             {email && (
               <a href={email.href} className="block transition hover:text-sky-600 dark:hover:text-sky-300">
                 {email.value}
@@ -86,7 +86,7 @@ export default function Footer() {
                 rel="noreferrer"
                 aria-label={item.label}
                 title={item.label}
-                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition hover:-translate-y-0.5 hover:border-sky-400 hover:text-sky-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-300"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-400 bg-slate-50 text-slate-800 transition hover:-translate-y-0.5 hover:border-sky-500 hover:text-sky-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:border-sky-400 dark:hover:text-sky-300"
               >
                 {item.label === "GitHub" ? (
                   <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
@@ -107,7 +107,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <p className="mx-auto mt-10 w-full max-w-6xl border-t border-slate-200 pt-6 text-center font-mono text-xs tracking-[0.16em] text-slate-500 dark:border-slate-800 dark:text-slate-400">
+      <p className="mx-auto mt-10 w-full max-w-6xl border-t border-slate-300 pt-6 text-center font-mono text-xs tracking-[0.16em] text-slate-600 dark:border-slate-800 dark:text-slate-400">
         © {new Date().getFullYear()} JOSEPH NDUNGU. ALL RIGHTS RESERVED.
       </p>
     </footer>

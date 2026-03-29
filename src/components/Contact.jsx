@@ -10,12 +10,12 @@ export default function Contact() {
   );
 
   return (
-    <section id="contact" className="bg-gradient-to-b from-sky-50 to-white px-6 py-28 dark:from-slate-950 dark:to-slate-950">
+    <section id="contact" className="bg-gradient-to-b from-sky-100 to-slate-50 px-6 py-28 dark:from-slate-950 dark:to-slate-950">
       <div className="mx-auto w-full max-w-3xl text-center">
         <FadeIn>
-          <p className="font-mono text-xs tracking-[0.32em] text-sky-700 dark:text-sky-300">05. CONTACT</p>
+          <p className="font-mono text-xs tracking-[0.32em] text-sky-800 dark:text-sky-300">05. CONTACT</p>
           <h2 className="mt-3 font-[Syne] text-4xl font-extrabold text-slate-900 dark:text-slate-100">Ready To Start Your Next Project?</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-700 dark:text-slate-300">
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-800 dark:text-slate-300">
             Let&apos;s collaborate to build reliable web applications and systems that deliver real value for your users and business goals.
           </p>
           <a
@@ -34,19 +34,19 @@ export default function Contact() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="flex items-center justify-between gap-4 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 transition hover:-translate-y-0.5 hover:border-blue-300 dark:border-slate-800 dark:bg-slate-900"
+                className="flex items-center justify-between gap-4 rounded-xl border border-slate-300 bg-white px-5 py-4 transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900"
               >
                 <div>
-                  <p className="font-mono text-xs tracking-[0.16em] text-blue-700 dark:text-blue-300">{item.label}</p>
-                  <p className="mt-1 text-sm text-slate-700 dark:text-slate-300">{item.value}</p>
+                  <p className="font-mono text-xs tracking-[0.16em] text-blue-800 dark:text-blue-300">{item.label}</p>
+                  <p className="mt-1 text-sm text-slate-800 dark:text-slate-300">{item.value}</p>
                 </div>
-                <span className="font-mono text-xs text-slate-400">Open</span>
+                <span className="font-mono text-xs text-slate-600">Open</span>
               </a>
             ))}
           </div>
 
-          <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 px-5 py-4 dark:border-slate-800 dark:bg-slate-900">
-            <p className="font-mono text-xs tracking-[0.16em] text-blue-700 dark:text-blue-300">SOCIALS</p>
+          <div className="mt-6 rounded-xl border border-slate-300 bg-white px-5 py-4 dark:border-slate-800 dark:bg-slate-900">
+            <p className="font-mono text-xs tracking-[0.16em] text-blue-800 dark:text-blue-300">SOCIALS</p>
             <div className="mt-3 flex items-center gap-3">
               {socialLinks.map((item) => (
                 <a
@@ -56,7 +56,7 @@ export default function Contact() {
                   rel="noreferrer"
                   aria-label={item.label}
                   title={item.label}
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-300 bg-white text-slate-700 transition hover:-translate-y-0.5 hover:border-blue-400 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:border-blue-400 dark:hover:text-blue-300"
+                  className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-400 bg-slate-50 text-slate-800 transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-800 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:border-blue-400 dark:hover:text-blue-300"
                 >
                   {item.label === "GitHub" ? (
                     <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
