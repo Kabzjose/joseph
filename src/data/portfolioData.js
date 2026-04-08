@@ -61,6 +61,17 @@ export const PROJECTS = [
     features: ["Responsive Design", "Fleet Showcase", "Clean UI", "Vanilla JS"],
     color: "#f97316",
   },
+  {
+    title: "URL Shortener",
+    tagline: "Full-Stack URL Shortener with Analytics",
+    description:
+      "A full-stack URL shortener platform with click analytics and custom aliases. Shorten any long URL, create memorable custom links, track click counts, and instantly redirect to original URLs with real-time analytics.",
+    tech: ["React", "Vite", "Node.js", "Express", "PostgreSQL", "Neon"],
+    live: "https://url-shortener-ruddy-tau.vercel.app",
+    api: "https://url-shortener-kxak.onrender.com",
+    features: ["Shorten URLs", "Custom Aliases", "Click Analytics", "Delete Links", "Instant Redirects"],
+    color: "#06b6d4",
+  },
 ];
 
 export const EXPERIENCE = [
