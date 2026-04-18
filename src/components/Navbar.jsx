@@ -21,7 +21,7 @@ export default function Navbar({ active, setActive, darkMode, setDarkMode }) {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-slate-300 bg-white/95 shadow-sm backdrop-blur-md dark:border-blue-200/10 dark:bg-slate-950/80"
+          ? "border-b border-slate-300 bg-slate-100/95 shadow-sm backdrop-blur-md dark:border-blue-200/10 dark:bg-slate-950/80"
           : "bg-transparent"
       }`}
     >
@@ -49,7 +49,7 @@ export default function Navbar({ active, setActive, darkMode, setDarkMode }) {
           ))}
           <button
             onClick={() => setDarkMode((prev) => !prev)}
-            className="rounded-lg border border-slate-400 bg-slate-50 px-3 py-1.5 font-mono text-xs tracking-wide text-slate-800 transition hover:border-slate-500 hover:bg-white dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+            className="rounded-lg border border-slate-400 bg-slate-100 px-3 py-1.5 font-mono text-xs tracking-wide text-slate-800 transition hover:border-slate-500 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
             aria-label="Toggle light and dark mode"
           >
             {darkMode ? "Light" : "Dark"}
@@ -59,14 +59,14 @@ export default function Navbar({ active, setActive, darkMode, setDarkMode }) {
         <div className="flex items-center gap-2 md:hidden">
           <button
             onClick={() => setDarkMode((prev) => !prev)}
-            className="rounded-md border border-slate-400 bg-slate-50 px-2.5 py-1 font-mono text-xs text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+            className="rounded-md border border-slate-400 bg-slate-100 px-2.5 py-1 font-mono text-xs text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
             aria-label="Toggle light and dark mode"
           >
             {darkMode ? "Light" : "Dark"}
           </button>
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="rounded-md border border-slate-400 bg-slate-50 p-2 text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+            className="rounded-md border border-slate-400 bg-slate-100 p-2 text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
             aria-label="Toggle menu"
           >
             {menuOpen ? "X" : "Menu"}
@@ -75,7 +75,7 @@ export default function Navbar({ active, setActive, darkMode, setDarkMode }) {
       </div>
 
       {menuOpen && (
-        <div className="border-t border-slate-300 bg-white/95 px-4 py-3 dark:border-slate-800 dark:bg-slate-950 md:hidden">
+        <div className="border-t border-slate-300 bg-slate-100/95 px-4 py-3 dark:border-slate-800 dark:bg-slate-950 md:hidden">
           {NAV_LINKS.map((link) => (
             <button
               key={link}

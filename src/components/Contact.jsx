@@ -10,7 +10,7 @@ export default function Contact() {
   );
 
   return (
-    <section id="contact" className="bg-gradient-to-b from-sky-100 to-slate-50 px-6 py-28 dark:from-slate-950 dark:to-slate-950">
+    <section id="contact" className="bg-gradient-to-b from-sky-100 to-slate-100 px-6 py-28 dark:from-slate-950 dark:to-slate-950">
       <div className="mx-auto w-full max-w-3xl text-center">
         <FadeIn>
           <p className="font-mono text-xs tracking-[0.32em] text-sky-800 dark:text-sky-300">05. CONTACT</p>
@@ -34,7 +34,7 @@ export default function Contact() {
                 href={item.href}
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="flex items-center justify-between gap-4 rounded-xl border border-slate-300 bg-white px-5 py-4 transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900"
+                className="flex items-center justify-between gap-4 rounded-xl border border-slate-300 bg-slate-100 px-5 py-4 transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900"
               >
                 <div>
                   <p className="font-mono text-xs tracking-[0.16em] text-blue-800 dark:text-blue-300">{item.label}</p>
@@ -45,7 +45,7 @@ export default function Contact() {
             ))}
           </div>
 
-          <div className="mt-6 rounded-xl border border-slate-300 bg-white px-5 py-4 dark:border-slate-800 dark:bg-slate-900">
+          <div className="mt-6 rounded-xl border border-slate-300 bg-slate-100 px-5 py-4 dark:border-slate-800 dark:bg-slate-900">
             <p className="font-mono text-xs tracking-[0.16em] text-blue-800 dark:text-blue-300">SOCIALS</p>
             <div className="mt-3 flex items-center gap-3">
               {socialLinks.map((item) => (

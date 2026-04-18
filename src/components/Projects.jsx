@@ -6,7 +6,7 @@ export default function Projects() {
   const [activeIndex, setActiveIndex] = useState(null);
 
   return (
-    <section id="projects" className="bg-slate-50 px-6 py-28 dark:bg-slate-950">
+    <section id="projects" className="bg-slate-100 px-6 py-28 dark:bg-slate-950">
       <div className="mx-auto w-full max-w-6xl">
         <FadeIn>
           <div className="mb-14">
@@ -22,7 +22,7 @@ export default function Projects() {
             return (
               <FadeIn key={project.title} delay={index * 0.08}>
                 <article
-                  className="relative overflow-hidden rounded-2xl border border-slate-300 bg-white p-6 shadow-sm transition dark:border-slate-800 dark:bg-slate-900"
+                  className="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-100 p-6 shadow-sm transition dark:border-slate-800 dark:bg-slate-900"
                   style={{ boxShadow: isOpen ? `0 12px 35px ${project.color}20` : "none" }}
                 >
                   <div
@@ -44,7 +44,7 @@ export default function Projects() {
                       className="rounded-lg px-3 py-2 font-mono text-xs tracking-wide text-white"
                       style={{ backgroundColor: project.color }}
                     >
-                      View Project
+                      Live Demo
                     </a>
                   </div>
 
@@ -64,24 +64,14 @@ export default function Projects() {
                   <div className="mt-5 flex flex-wrap gap-3">
                     <button
                       onClick={() => setActiveIndex(isOpen ? null : index)}
-                      className="rounded-md border border-slate-400 bg-white px-3 py-1.5 font-mono text-xs tracking-wide text-slate-800 transition hover:border-slate-500 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-200"
+                      className="rounded-md border border-slate-400 bg-slate-100 px-3 py-1.5 font-mono text-xs tracking-wide text-slate-900 transition hover:border-slate-500 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
                     >
                       {isOpen ? "Hide Details" : "View Details"}
                     </button>
-                    {project.api && (
-                      <a
-                        href={project.api}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-md border border-blue-400 bg-blue-100 px-3 py-1.5 font-mono text-xs tracking-wide text-blue-800 transition hover:bg-blue-200 dark:border-blue-700 dark:bg-blue-500/10 dark:text-blue-200"
-                      >
-                        API Link
-                      </a>
-                    )}
                   </div>
 
                   {isOpen && (
-                    <div className="mt-5 border-t border-slate-300 pt-4 dark:border-slate-700">
+                    <div className="mt-5 rounded-xl border border-slate-200 bg-slate-200/70 p-4 dark:border-slate-700 dark:bg-slate-950/60">
                       <p className="font-mono text-xs tracking-[0.18em]" style={{ color: project.color }}>
                         KEY FEATURES
                       </p>
@@ -89,7 +79,7 @@ export default function Projects() {
                         {project.features.map((feature) => (
                           <li
                             key={feature}
-                            className="rounded-full border px-3 py-1 text-xs"
+                            className="rounded-full border bg-slate-100/90 px-3 py-1 text-xs dark:bg-slate-900/80"
                             style={{ borderColor: `${project.color}66`, color: project.color }}
                           >
                             {feature}
