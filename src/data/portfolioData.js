@@ -21,6 +21,17 @@ export const PROJECTS = [
     color: "#10b981",
   },
   {
+    title: "V-Chat",
+    tagline: "Full-Stack Real-Time Chat Application",
+    description:
+      "A real-time chat platform built with React, Vite, Express, PostgreSQL, JWT auth, Google OAuth, and Socket.IO for live conversations, protected rooms, and emoji reactions.",
+    tech: ["React", "TypeScript", "Vite", "Express", "PostgreSQL", "JWT", "Passport", "Socket.IO"],
+    live: "https://v-chat-smoky.vercel.app/",
+    api: "https://v-chat-l3gp.onrender.com/",
+    features: ["JWT Authentication", "Google OAuth Login", "Real-time Messaging", "Password-Protected Rooms", "Emoji Reactions"],
+    color: "#8b5cf6",
+  },
+  {
     title: "Job Tracker",
     tagline: "Full-Stack Job Application Manager",
     description:
