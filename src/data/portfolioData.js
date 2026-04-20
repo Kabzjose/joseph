@@ -2,14 +2,27 @@ export const NAV_LINKS = ["About", "Skills", "Projects", "Experience", "Contact"
 
 export const SKILLS = {
   Frontend: ["React", "TypeScript", "Vite", "Tailwind CSS","Bootstrap", "React Router", "HTML5", "CSS3"],
-  Backend: ["Node.js", "Express.js", "REST APIs", "JWT Auth", "Nodemailer", "Bcrypt", "Joi"],
-  Databases: ["PostgreSQL", "MongoDB", "Supabase", "Neon DB", "SQL"],
+  Backend: ["Node.js", "Express.js", "REST APIs", "JWT Auth", "Passport", "Nodemailer", "Bcrypt", "Joi"],
+  Databases: ["PostgreSQL", "Redis", "MongoDB", "Supabase", "Neon DB", "SQL"],
   "Tools & Platforms": ["Git", "GitHub", "Linux", "Docker", "Vercel", "Render", "AWS","Postman"],
   "UI/UX": ["Figma", "Responsive Design", "AOS Animations", "Component Design"],
 };
 
 export const PROJECTS = [
+
   {
+    title: "V-Chat",
+    tagline: "Full-Stack Real-Time Chat Application",
+    description:
+      "A full-stack real-time chat app built with React, Vite, Express, PostgreSQL, Redis, JWT auth, Google OAuth, and Socket.IO. It supports protected rooms, live presence, typing indicators, and Dockerized deployment.",
+    tech: ["React", "TypeScript", "Vite", "Express", "PostgreSQL", "Redis", "JWT", "Passport", "Socket.IO", "Docker"],
+    live: "https://v-chat-smoky.vercel.app/",
+    api: "https://v-chat-l3gp.onrender.com/",
+    repo: "https://github.com/kabzjose/v-chat",
+    features: ["JWT Authentication", "Google OAuth + Passport Sessions", "Real-time Messaging", "Typing + Presence Indicators", "Password-Protected Rooms", "Dockerized Setup"],
+    color: "#8b5cf6",
+  },
+    {
     title: "Wildlife Tracker",
     tagline: "Full-Stack Conservation Platform",
     description:
@@ -19,17 +32,6 @@ export const PROJECTS = [
     api: "https://wildlife-tracker-qrv6.onrender.com",
     features: ["AI Image Analysis", "Interactive Maps", "Role-Based Access", "Admin Dashboard", "Real-time Tracking"],
     color: "#10b981",
-  },
-  {
-    title: "V-Chat",
-    tagline: "Full-Stack Real-Time Chat Application",
-    description:
-      "A real-time chat platform built with React, Vite, Express, PostgreSQL, JWT auth, Google OAuth, and Socket.IO for live conversations, protected rooms, and emoji reactions.",
-    tech: ["React", "TypeScript", "Vite", "Express", "PostgreSQL", "JWT", "Passport", "Socket.IO"],
-    live: "https://v-chat-smoky.vercel.app/",
-    api: "https://v-chat-l3gp.onrender.com/",
-    features: ["JWT Authentication", "Google OAuth Login", "Real-time Messaging", "Password-Protected Rooms", "Emoji Reactions"],
-    color: "#8b5cf6",
   },
     {
     title: "URL Shortener",

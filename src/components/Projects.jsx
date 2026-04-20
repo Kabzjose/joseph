@@ -18,6 +18,7 @@ export default function Projects() {
         <div className="grid gap-6 md:grid-cols-2">
           {PROJECTS.map((project, index) => {
             const isOpen = index === activeIndex;
+            const isDockerized = project.tech.includes("Docker");
 
             return (
               <FadeIn key={project.title} delay={index * 0.08}>
@@ -32,20 +33,39 @@ export default function Projects() {
 
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <h3 className="font-[Syne] text-2xl font-bold text-slate-900 dark:text-slate-100">{project.title}</h3>
+                      <div className="flex flex-wrap items-center gap-2">
+                        <h3 className="font-[Syne] text-2xl font-bold text-slate-900 dark:text-slate-100">{project.title}</h3>
+                        {isDockerized && (
+                          <span className="rounded-full border border-emerald-300 bg-emerald-100 px-2 py-0.5 font-mono text-[10px] tracking-[0.08em] text-emerald-800 dark:border-emerald-900/50 dark:bg-emerald-500/10 dark:text-emerald-300">
+                            Dockerized
+                          </span>
+                        )}
+                      </div>
                       <p className="mt-1 font-mono text-xs tracking-[0.14em]" style={{ color: project.color }}>
                         {project.tagline}
                       </p>
                     </div>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-lg px-3 py-2 font-mono text-xs tracking-wide text-white"
-                      style={{ backgroundColor: project.color }}
-                    >
-                      Live Demo
-                    </a>
+                    <div className="flex flex-wrap items-center gap-2">
+                      {project.repo && (
+                        <a
+                          href={project.repo}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-lg border border-slate-300 bg-white px-3 py-2 font-mono text-xs tracking-wide text-slate-800 transition hover:border-slate-400 hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+                        >
+                          GitHub Repo
+                        </a>
+                      )}
+                      <a
+                        href={project.live}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-lg px-3 py-2 font-mono text-xs tracking-wide text-white"
+                        style={{ backgroundColor: project.color }}
+                      >
+                        Live Demo
+                      </a>
+                    </div>
                   </div>
 
                   <p className="mt-4 text-sm leading-7 text-slate-800 dark:text-slate-300">{project.description}</p>
