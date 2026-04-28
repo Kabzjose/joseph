@@ -117,10 +117,11 @@ export const EXPERIENCE = [
 
 export const CONTACT_LINKS = [
   { label: "Email", value: "josekabz00@gmail.com", href: "mailto:josekabz00@gmail.com" },
+  
   { label: "Phone", value: "+254 718 047 199", href: "tel:+254718047199" },
   { label: "WhatsApp", value: "+254 718 047 199", href: "https://wa.me/254718047199" },
   { label: "GitHub", value: "github.com/kabzjose", href: "https://github.com/kabzjose" },
-  { label: "LinkedIn", value: "https://www.linkedin.com/in/joseph-ndungu-ab21293aa/", href: "https://www.linkedin.com/in/joseph-ndungu-ab21293aa/" },
+  { label: "LinkedIn", value: "https://www.linkedin.com/in/joseph-ndungu-k/", href: "https://www.linkedin.com/in/joseph-ndungu-k/" },
 ];
 
 export const CURRENTLY_LEARNING = ["Docker & Containerization", "AWS / Cloud Deployment", "React Native", "AI Integration"];
