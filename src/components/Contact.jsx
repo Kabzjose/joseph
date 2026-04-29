@@ -53,7 +53,7 @@ export default function Contact() {
     <section id="contact" className="bg-gradient-to-b from-sky-100 to-slate-100 px-6 py-28 dark:from-slate-950 dark:to-slate-950">
       <div className="mx-auto w-full max-w-6xl text-center">
         <FadeIn>
-          <p className="font-mono text-xs tracking-[0.32em] text-sky-800 dark:text-sky-300">05. CONTACT</p>
+          <p className="font-mono text-xs tracking-[0.32em] text-[#22c55e]">05. CONTACT</p>
           <h2 className="mt-3 font-[Syne] text-4xl font-extrabold text-slate-900 dark:text-slate-100">Ready To Start Your Next Project?</h2>
           <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-800 dark:text-slate-300">
             Let&apos;s collaborate to build reliable web applications and systems that deliver real value for your users and business goals.
@@ -140,6 +140,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:outline focus:outline-2 focus:outline-[#22c55e] focus:outline-offset-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
                     placeholder="Your name"
                   />
                 </label>
@@ -152,7 +153,7 @@ export default function Contact() {
                     value={formValues.email}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:outline focus:outline-2 focus:outline-[#22c55e] focus:outline-offset-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
                     placeholder="you@example.com"
                   />
                 </label>
@@ -166,7 +167,7 @@ export default function Contact() {
                   value={formValues.subject}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                  className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:outline focus:outline-2 focus:outline-[#22c55e] focus:outline-offset-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
                   placeholder="Project inquiry, collaboration, or freelance work"
                 />
               </label>
@@ -179,7 +180,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                  className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:outline focus:outline-2 focus:outline-[#22c55e] focus:outline-offset-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
                   placeholder="Tell me about your project, timeline, and what you need help with."
                 />
               </label>
@@ -187,7 +188,7 @@ export default function Contact() {
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-xl bg-sky-600 px-6 py-3 font-mono text-xs tracking-[0.18em] text-white transition hover:bg-sky-500"
+                  className="inline-flex items-center justify-center rounded-xl bg-[#22c55e] px-6 py-3 font-mono text-xs tracking-[0.18em] text-black transition hover:bg-[#22c55e]"
                 >
                   SEND MESSAGE
                 </button>

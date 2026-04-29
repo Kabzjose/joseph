@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -24,6 +24,37 @@ export default function App() {
     localStorage.setItem("theme-mode", darkMode ? "dark" : "light");
   }, [darkMode]);
 
+  const cursorRef = useRef(null);
+
+  useEffect(() => {
+    // don't enable on touch devices
+    if (typeof window !== "undefined" && "ontouchstart" in window) return;
+
+    let el = cursorRef.current || document.getElementById("cursor-glow");
+    let created = false;
+
+    if (!el) {
+      el = document.createElement("div");
+      el.id = "cursor-glow";
+      document.body.appendChild(el);
+      created = true;
+    }
+
+    // remember ref
+    cursorRef.current = el;
+
+    const onMove = (e) => {
+      el.style.left = `${e.clientX}px`;
+      el.style.top = `${e.clientY}px`;
+    };
+
+    window.addEventListener("mousemove", onMove);
+    return () => {
+      window.removeEventListener("mousemove", onMove);
+      if (created && el && el.parentNode) el.parentNode.removeChild(el);
+    };
+  }, []);
+
   useEffect(() => {
     const onScroll = () => {
       const sections = NAV_LINKS.map((name) => ({
@@ -45,18 +76,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-100 text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-100">
-      <Navbar
-        active={activeNav}
-        setActive={setActiveNav}
-        darkMode={darkMode}
-        setDarkMode={setDarkMode}
-      />
-      <Hero />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
-      <Footer />
+      <div id="cursor-glow" ref={cursorRef} />
+      <div className="relative z-10">
+        <Navbar
+          active={activeNav}
+          setActive={setActiveNav}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+        <Hero />
+        <Skills />
+        <Projects />
+        <Experience />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 }

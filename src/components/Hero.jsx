@@ -46,7 +46,7 @@ export default function Hero() {
 
           <p className="mt-4 min-h-8 font-mono text-sm tracking-wider text-sky-800 dark:text-sky-300">
             {typed}
-            <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-sky-700 dark:bg-sky-300" />
+            <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-[#22c55e]" />
           </p>
 
           <p className="mt-4 max-w-xl text-base leading-7 text-slate-800 dark:text-slate-300">

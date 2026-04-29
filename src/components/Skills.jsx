@@ -34,7 +34,7 @@ export default function Skills() {
       <div className="mx-auto w-full max-w-6xl">
         <FadeIn>
           <div className="mb-14">
-            <p className="font-mono text-xs tracking-[0.32em] text-sky-700 dark:text-sky-300">02. WHAT I DO</p>
+            <p className="font-mono text-xs tracking-[0.32em] text-[#22c55e]">02. WHAT I DO</p>
             <h2 className="mt-3 font-[Syne] text-4xl font-extrabold text-slate-900 dark:text-slate-100">Skills & Services</h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-700 dark:text-slate-300">
               Combining practical engineering skills with product thinking to build complete solutions from UI to API and database.
@@ -52,7 +52,7 @@ export default function Skills() {
                   {item.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-md border border-sky-300 bg-sky-100 px-2.5 py-1 font-mono text-xs text-sky-800 dark:border-sky-900/50 dark:bg-sky-500/10 dark:text-sky-200"
+                      className="rounded-md border border-sky-300 bg-sky-100 px-2.5 py-1 font-mono text-xs text-sky-800 transition hover:border-[#22c55e] hover:bg-transparent hover:text-[#22c55e] dark:border-sky-900/50 dark:bg-sky-500/10 dark:text-sky-200"
                     >
                       {skill}
                     </span>
@@ -72,7 +72,7 @@ export default function Skills() {
                   {items.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-md border border-emerald-300 bg-emerald-100 px-3 py-1 font-mono text-xs text-emerald-900 dark:border-emerald-900/50 dark:bg-emerald-500/10 dark:text-emerald-200"
+                      className="rounded-md border border-emerald-300 bg-emerald-100 px-3 py-1 font-mono text-xs text-emerald-900 transition hover:border-[#22c55e] hover:bg-transparent hover:text-[#22c55e] dark:border-emerald-900/50 dark:bg-emerald-500/10 dark:text-emerald-200"
                     >
                       {skill}
                     </span>

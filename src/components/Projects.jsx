@@ -10,7 +10,7 @@ export default function Projects() {
       <div className="mx-auto w-full max-w-6xl">
         <FadeIn>
           <div className="mb-14">
-            <p className="font-mono text-xs tracking-[0.32em] text-blue-800 dark:text-blue-300">03. PROJECTS</p>
+            <p className="font-mono text-xs tracking-[0.32em] text-[#22c55e]">03. PROJECTS</p>
             <h2 className="mt-3 font-[Syne] text-4xl font-extrabold text-slate-900 dark:text-slate-100">Featured Work</h2>
           </div>
         </FadeIn>
@@ -24,7 +24,7 @@ export default function Projects() {
               <FadeIn key={project.title} delay={index * 0.08}>
                 <article
                   className="relative overflow-hidden rounded-2xl border border-slate-300 bg-slate-100 p-6 shadow-sm transition dark:border-slate-800 dark:bg-slate-900"
-                  style={{ boxShadow: isOpen ? `0 12px 35px ${project.color}20` : "none" }}
+                  style={{ boxShadow: isOpen ? `0 12px 35px ${project.color}20` : "none", borderTop: "3px solid #22c55e" }}
                 >
                   <div
                     className="absolute left-0 top-0 h-1 w-full"

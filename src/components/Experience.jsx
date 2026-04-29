@@ -7,7 +7,7 @@ export default function Experience() {
       <div className="mx-auto w-full max-w-4xl">
         <FadeIn>
           <div className="mb-14">
-            <p className="font-mono text-xs tracking-[0.32em] text-blue-800 dark:text-blue-300">04. EXPERIENCE</p>
+            <p className="font-mono text-xs tracking-[0.32em] text-[#22c55e]">04. EXPERIENCE</p>
             <h2 className="mt-3 font-[Syne] text-4xl font-extrabold text-slate-900 dark:text-slate-100">Career Timeline</h2>
           </div>
         </FadeIn>

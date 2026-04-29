@@ -38,6 +38,7 @@ export default function Navbar({ active, setActive, darkMode, setDarkMode }) {
             <button
               key={link}
               onClick={() => scrollTo(link)}
+              style={active === link ? { borderBottom: "2px solid #22c55e" } : undefined}
               className={`border-b-2 pb-1 font-mono text-xs tracking-[0.18em] uppercase transition ${
                 active === link
                   ? "border-blue-600 text-blue-600 dark:border-blue-300 dark:text-blue-300"
