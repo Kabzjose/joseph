@@ -41,7 +41,7 @@ export default function Hero() {
           <p className="mt-6 font-mono text-xs uppercase tracking-[0.28em] text-sky-800 dark:text-sky-300">Hi, I&apos;m</p>
 
           <h1 className="mt-2 font-[Syne] text-5xl font-extrabold leading-[0.95] text-slate-900 sm:text-6xl md:text-7xl dark:text-slate-100">
-            Joseph <span className="text-sky-700 dark:text-sky-300">Ndungu</span>
+            Joseph <span className="text-emerald-600 dark:text-emerald-400">Ndungu</span>
           </h1>
 
           <p className="mt-4 min-h-8 font-mono text-sm tracking-wider text-sky-800 dark:text-sky-300">
@@ -56,7 +56,7 @@ export default function Hero() {
           <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#projects"
-              className="rounded-lg bg-sky-600 px-6 py-3 font-mono text-xs tracking-[0.14em] text-white transition hover:-translate-y-0.5 hover:bg-sky-500"
+              className="rounded-lg bg-emerald-600 px-6 py-3 font-mono text-xs tracking-[0.14em] text-white transition hover:-translate-y-0.5 hover:bg-emerald-500"
             >
               EXPLORE MY WORK
             </a>
