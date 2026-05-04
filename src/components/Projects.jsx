@@ -84,7 +84,7 @@ export default function Projects() {
                   <div className="mt-5 flex flex-wrap gap-3">
                     <button
                       onClick={() => setActiveIndex(isOpen ? null : index)}
-                      className="rounded-md border border-slate-400 bg-slate-100 px-3 py-1.5 font-mono text-xs tracking-wide text-slate-900 transition hover:border-slate-500 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700"
+                      className="rounded-md border border-emerald-500 bg-emerald-500 px-3 py-1.5 font-mono text-xs tracking-wide text-white transition hover:bg-emerald-600 dark:border-emerald-400 dark:bg-emerald-600 dark:hover:bg-emerald-500"
                     >
                       {isOpen ? "Hide Details" : "View Details"}
                     </button>

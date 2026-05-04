@@ -33,6 +33,25 @@ export const PROJECTS = [
     features: ["AI Image Analysis", "Interactive Maps", "Role-Based Access", "Admin Dashboard", "Real-time Tracking"],
     color: "#10b981",
   },
+  {
+    title: "Reelwise",
+    tagline: "AI-powered Movie Recommendations",
+    description:
+      "Reelwise is a full-stack movie discovery app. Users complete a short onboarding flow — selecting genres, mood, and films they've already seen — and receive six tailored recommendations powered by Gemini 1.5 Flash. Recommendations stream token-by-token to the UI, users can refine results via follow-up chat, browse the TMDB catalogue with filters, and save films to a persistent watchlist synced via Supabase.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Gemini AI", "TMDB", "Supabase", "NextAuth.js", "Vercel"],
+    live: "https://movie-app-eta-ashy.vercel.app",
+    repo: "https://github.com/kabzjose/movie-app",
+    features: [
+      "AI recommendations (Gemini 1.5 Flash)",
+      "Streaming token-by-token responses",
+      "Follow-up chat refinements",
+      "Browse & filter TMDB catalogue",
+      "Movie detail pages",
+      "Watchlist: localStorage + Supabase",
+      "Google auth (NextAuth)"
+    ],
+    color: "#ef4444",
+  },
     {
     title: "URL Shortener",
     tagline: "Full-Stack URL Shortener with Analytics",
