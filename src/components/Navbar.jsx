@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NAV_LINKS } from "../data/portfolioData";
 
-export default function Navbar({ active, setActive, darkMode, setDarkMode }) {
+export default function Navbar({ active, setActive }) {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -21,53 +21,45 @@ export default function Navbar({ active, setActive, darkMode, setDarkMode }) {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-slate-300 bg-slate-100/95 shadow-sm backdrop-blur-md dark:border-blue-200/10 dark:bg-slate-950/80"
+          ? "border-b border-white/10 bg-[#070b14]/90 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
+      <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <button
-          onClick={() => scrollTo("About")}
-          className="font-mono text-base font-bold tracking-[0.24em] text-blue-700 transition hover:text-blue-600 dark:text-blue-300"
+          onClick={() => scrollTo("about")}
+          className="font-[Montserrat] text-lg font-extrabold tracking-[0.14em] text-[#FFD700] transition hover:text-[#00FF7F]"
         >
-          JN.dev
+          Joseph Ndungu
         </button>
 
-        <div className="hidden items-center gap-8 md:flex">
+        <div className="hidden items-center gap-7 md:flex">
           {NAV_LINKS.map((link) => (
             <button
-              key={link}
-              onClick={() => scrollTo(link)}
-              style={active === link ? { borderBottom: "2px solid #22c55e" } : undefined}
-              className={`border-b-2 pb-1 font-mono text-xs tracking-[0.18em] uppercase transition ${
-                active === link
-                  ? "border-blue-600 text-blue-600 dark:border-blue-300 dark:text-blue-300"
-                  : "border-transparent text-slate-700 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-200"
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
+              className={`border-b-2 pb-1 font-[Montserrat] text-xs font-semibold tracking-[0.24em] uppercase transition ${
+                active === link.label
+                  ? "border-[#00FF7F] text-[#00FF7F]"
+                  : "border-transparent text-white/75 hover:text-white"
               }`}
             >
-              {link}
+              {link.label}
             </button>
           ))}
           <button
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="rounded-lg border border-slate-400 bg-slate-100 px-3 py-1.5 font-mono text-xs tracking-wide text-slate-800 transition hover:border-slate-500 hover:bg-slate-200 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
-            aria-label="Toggle light and dark mode"
+            onClick={() => window.open("https://github.com/kabzjose", "_blank", "noreferrer")}
+            className="rounded-full border border-[#FFD700] bg-[#FFD700] px-4 py-2 font-[Montserrat] text-xs font-bold tracking-[0.22em] text-black transition hover:-translate-y-0.5 hover:bg-[#00FF7F]"
+            aria-label="Open GitHub profile"
           >
-            {darkMode ? "Light" : "Dark"}
+            GITHUB
           </button>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
           <button
-            onClick={() => setDarkMode((prev) => !prev)}
-            className="rounded-md border border-slate-400 bg-slate-100 px-2.5 py-1 font-mono text-xs text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
-            aria-label="Toggle light and dark mode"
-          >
-            {darkMode ? "Light" : "Dark"}
-          </button>
-          <button
             onClick={() => setMenuOpen((prev) => !prev)}
-            className="rounded-md border border-slate-400 bg-slate-100 p-2 text-slate-800 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200"
+            className="rounded-md border border-white/20 bg-white/5 p-2 text-white"
             aria-label="Toggle menu"
           >
             {menuOpen ? "X" : "Menu"}
@@ -76,18 +68,24 @@ export default function Navbar({ active, setActive, darkMode, setDarkMode }) {
       </div>
 
       {menuOpen && (
-        <div className="border-t border-slate-300 bg-slate-100/95 px-4 py-3 dark:border-slate-800 dark:bg-slate-950 md:hidden">
+        <div className="border-t border-white/10 bg-[#070b14]/95 px-4 py-3 md:hidden">
           {NAV_LINKS.map((link) => (
             <button
-              key={link}
-              onClick={() => scrollTo(link)}
-              className={`block w-full border-b border-slate-200 py-3 text-left font-mono text-xs tracking-[0.16em] uppercase dark:border-slate-800 ${
-                active === link ? "text-blue-700 dark:text-blue-300" : "text-slate-700 dark:text-slate-300"
+              key={link.id}
+              onClick={() => scrollTo(link.id)}
+              className={`block w-full border-b border-white/10 py-3 text-left font-[Montserrat] text-xs tracking-[0.2em] uppercase ${
+                active === link.label ? "text-[#00FF7F]" : "text-white/80"
               }`}
             >
-              {link}
+              {link.label}
             </button>
           ))}
+          <button
+            onClick={() => window.open("https://github.com/kabzjose", "_blank", "noreferrer")}
+            className="mt-3 w-full rounded-full bg-[#FFD700] px-4 py-3 font-[Montserrat] text-xs font-bold tracking-[0.22em] text-black"
+          >
+            GITHUB
+          </button>
         </div>
       )}
     </nav>

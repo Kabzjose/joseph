@@ -1,4 +1,12 @@
-export const NAV_LINKS = ["About", "Skills", "Projects", "Experience", "Contact"];
+import heroImage from "../assets/hero.png";
+import portraitImage from "../assets/image.jpeg";
+
+export const NAV_LINKS = [
+  { id: "about", label: "ABOUT ME" },
+  { id: "skills", label: "SKILLS" },
+  { id: "projects", label: "PROJECTS" },
+  { id: "contact", label: "CONTACTS" },
+];
 
 export const SKILLS = {
   Frontend: ["React", "TypeScript", "Vite", "Tailwind CSS","Bootstrap", "React Router", "HTML5", "CSS3"],
@@ -21,6 +29,7 @@ export const PROJECTS = [
     repo: "https://github.com/kabzjose/v-chat",
     features: ["JWT Authentication", "Google OAuth + Passport Sessions", "Real-time Messaging", "Typing + Presence Indicators", "Password-Protected Rooms", "Dockerized Setup"],
     color: "#8b5cf6",
+    image: heroImage,
   },
     {
     title: "Wildlife Tracker",
@@ -32,6 +41,7 @@ export const PROJECTS = [
     api: "https://wildlife-tracker-qrv6.onrender.com",
     features: ["AI Image Analysis", "Interactive Maps", "Role-Based Access", "Admin Dashboard", "Real-time Tracking"],
     color: "#10b981",
+    image: portraitImage,
   },
   {
     title: "Reelwise",
@@ -51,6 +61,7 @@ export const PROJECTS = [
       "Google auth (NextAuth)"
     ],
     color: "#ef4444",
+    image: heroImage,
   },
     {
     title: "URL Shortener",
@@ -62,6 +73,7 @@ export const PROJECTS = [
     api: "https://url-shortener-kxak.onrender.com",
     features: ["Shorten URLs", "Custom Aliases", "Click Analytics", "Delete Links", "Instant Redirects"],
     color: "#06b6d4",
+    image: portraitImage,
   },
   {
     title: "Job Tracker",
@@ -73,6 +85,7 @@ export const PROJECTS = [
     api: "https://job-tracker-backend-u6xr.onrender.com",
     features: ["JWT + Refresh Tokens", "Email Reset Flow", "Job Stats Dashboard", "Filter by Status", "Protected Routes"],
     color: "#3b82f6",
+    image: heroImage,
   },
   {
     title: "Class Reminder App",
@@ -83,6 +96,7 @@ export const PROJECTS = [
     live: "https://class-reminder-frontend.vercel.app/",
     features: ["JWT Authentication", "Protected Routes", "CRUD Class Management", "Timetable View", "User-Specific Data Isolation"],
     color: "#22c55e",
+    image: portraitImage,
   },
   {
     title: "Summit Events",
@@ -93,6 +107,7 @@ export const PROJECTS = [
     live: "https://summit-mauve.vercel.app/",
     features: ["Scroll Animations", "Mobile-First", "Dynamic Navbar", "Testimonials Grid", "Luxury Design"],
     color: "#f59e0b",
+    image: heroImage,
   },
   {
     title: "Peach State Drive",
@@ -103,6 +118,7 @@ export const PROJECTS = [
     live: "https://kabzjose.github.io/peach-State-Drive-/",
     features: ["Responsive Design", "Fleet Showcase", "Clean UI", "Vanilla JS"],
     color: "#f97316",
+    image: portraitImage,
   },
 
 ];

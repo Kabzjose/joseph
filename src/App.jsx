@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
@@ -9,20 +9,7 @@ import Footer from "./components/Footer";
 import { NAV_LINKS } from "./data/portfolioData";
 
 export default function App() {
-  const [activeNav, setActiveNav] = useState("About");
-  const [darkMode, setDarkMode] = useState(() => {
-    const savedMode = localStorage.getItem("theme-mode");
-    if (savedMode) {
-      return savedMode === "dark";
-    }
-
-    return true;
-  });
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-    localStorage.setItem("theme-mode", darkMode ? "dark" : "light");
-  }, [darkMode]);
+  const [activeNav, setActiveNav] = useState("ABOUT ME");
 
   const cursorRef = useRef(null);
 
@@ -57,9 +44,9 @@ export default function App() {
 
   useEffect(() => {
     const onScroll = () => {
-      const sections = NAV_LINKS.map((name) => ({
-        name,
-        element: document.getElementById(name.toLowerCase()),
+      const sections = NAV_LINKS.map((link) => ({
+        name: link.label,
+        element: document.getElementById(link.id),
       }));
 
       for (const { name, element } of sections.reverse()) {
@@ -75,15 +62,10 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-slate-100 text-slate-950 transition-colors dark:bg-slate-950 dark:text-slate-100">
+    <div className="min-h-screen bg-[#070b14] text-white transition-colors">
       <div id="cursor-glow" ref={cursorRef} />
       <div className="relative z-10">
-        <Navbar
-          active={activeNav}
-          setActive={setActiveNav}
-          darkMode={darkMode}
-          setDarkMode={setDarkMode}
-        />
+        <Navbar active={activeNav} setActive={setActiveNav} />
         <Hero />
         <Skills />
         <Projects />

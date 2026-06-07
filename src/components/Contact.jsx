@@ -50,17 +50,17 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-gradient-to-b from-sky-100 to-slate-100 px-6 py-28 dark:from-slate-950 dark:to-slate-950">
+    <section id="contact" className="bg-[#050816] px-6 py-28">
       <div className="mx-auto w-full max-w-6xl text-center">
         <FadeIn>
-          <p className="font-mono text-xs tracking-[0.32em] text-[#22c55e]">05. CONTACT</p>
-          <h2 className="mt-3 font-[Syne] text-4xl font-extrabold text-slate-900 dark:text-slate-100">Ready To Start Your Next Project?</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-800 dark:text-slate-300">
+          <p className="font-[Montserrat] text-xs tracking-[0.32em] text-[#00FF7F]">04. CONTACT</p>
+          <h2 className="mt-3 font-[Montserrat] text-4xl font-extrabold text-[#FFD700]">Ready To Start Your Next Project?</h2>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/80">
             Let&apos;s collaborate to build reliable web applications and systems that deliver real value for your users and business goals.
           </p>
           <a
             href="mailto:josekabz00@gmail.com"
-            className="mt-7 inline-block rounded-lg bg-sky-600 px-6 py-3 font-mono text-xs tracking-[0.16em] text-white transition hover:bg-sky-500"
+            className="mt-7 inline-block rounded-full bg-[#FFD700] px-6 py-3 font-[Montserrat] text-xs font-bold tracking-[0.18em] text-black transition hover:-translate-y-0.5 hover:bg-[#00FF7F]"
           >
             LET&apos;S WORK TOGETHER
           </a>
@@ -69,26 +69,26 @@ export default function Contact() {
         <div className="mt-12 grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <FadeIn delay={0.2} className="text-left">
             <div className="space-y-3">
-            {directLinks.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                download={item.download || undefined}
-                target={item.href.startsWith("http") ? "_blank" : undefined}
-                rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                className="flex items-center justify-between gap-4 rounded-xl border border-slate-300 bg-slate-100 px-5 py-4 transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900"
-              >
-                <div>
-                  <p className="font-mono text-xs tracking-[0.16em] text-blue-800 dark:text-blue-300">{item.label}</p>
-                  <p className="mt-1 text-sm text-slate-800 dark:text-slate-300">{item.value}</p>
-                </div>
-                <span className="font-mono text-xs text-slate-600">{item.download ? "Download" : "Open"}</span>
-              </a>
-            ))}
+              {directLinks.map((item) => (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  download={item.download || undefined}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  className="flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 px-5 py-4 transition hover:-translate-y-0.5 hover:border-[#00FF7F]/50"
+                >
+                  <div>
+                    <p className="font-[Montserrat] text-xs tracking-[0.16em] text-[#00FF7F]">{item.label}</p>
+                    <p className="mt-1 text-sm text-white/85">{item.value}</p>
+                  </div>
+                  <span className="font-[Montserrat] text-xs text-white/60">{item.download ? "Download" : "Open"}</span>
+                </a>
+              ))}
             </div>
 
-            <div className="mt-6 rounded-xl border border-slate-300 bg-slate-100 px-5 py-4 dark:border-slate-800 dark:bg-slate-900">
-              <p className="font-mono text-xs tracking-[0.16em] text-blue-800 dark:text-blue-300">SOCIALS</p>
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/5 px-5 py-4">
+              <p className="font-[Montserrat] text-xs tracking-[0.16em] text-[#FFD700]">SOCIALS</p>
               <div className="mt-3 flex items-center gap-3">
                 {socialLinks.map((item) => (
                   <a
@@ -98,7 +98,7 @@ export default function Contact() {
                     rel="noreferrer"
                     aria-label={item.label}
                     title={item.label}
-                    className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-slate-400 bg-slate-50 text-slate-800 transition hover:-translate-y-0.5 hover:border-blue-500 hover:text-blue-800 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-200 dark:hover:border-blue-400 dark:hover:text-blue-300"
+                    className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/10 bg-black/30 text-white transition hover:-translate-y-0.5 hover:border-[#FFD700] hover:text-[#FFD700]"
                   >
                     {item.label === "GitHub" ? (
                       <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true">
@@ -118,69 +118,68 @@ export default function Contact() {
           <FadeIn delay={0.3}>
             <form
               onSubmit={handleSubmit}
-              className="rounded-3xl border border-slate-300 bg-white/80 p-6 text-left shadow-[0_18px_60px_rgba(15,23,42,0.08)] backdrop-blur dark:border-slate-800 dark:bg-slate-900/80"
+              className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 text-left shadow-[0_18px_60px_rgba(0,0,0,0.24)] backdrop-blur"
             >
               <div className="flex items-center justify-between gap-4">
                 <div>
-                  <p className="font-mono text-xs tracking-[0.2em] text-sky-800 dark:text-sky-300">SEND A MESSAGE</p>
-                  <h3 className="mt-2 font-[Syne] text-2xl font-bold text-slate-900 dark:text-slate-100">Reach out directly</h3>
+                  <p className="font-[Montserrat] text-xs tracking-[0.2em] text-[#00FF7F]">SEND A MESSAGE</p>
+                  <h3 className="mt-2 font-[Montserrat] text-2xl font-bold text-[#FFD700]">Reach out directly</h3>
                 </div>
-                <span className="rounded-full border border-sky-200 bg-sky-50 px-3 py-1 font-mono text-[11px] tracking-[0.18em] text-sky-800 dark:border-sky-900 dark:bg-sky-950 dark:text-sky-200">
+                <span className="rounded-full border border-[#00FF7F]/30 bg-black/30 px-3 py-1 font-[Montserrat] text-[11px] tracking-[0.18em] text-[#00FF7F]">
                   RESPONSE READY
                 </span>
               </div>
 
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 <label className="space-y-2">
-                  <span className="font-mono text-xs tracking-[0.16em] text-slate-600 dark:text-slate-400">NAME</span>
+                  <span className="font-[Montserrat] text-xs tracking-[0.16em] text-white/65">NAME</span>
                   <input
                     type="text"
                     name="name"
                     value={formValues.name}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-sky-500 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
-                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:outline focus:outline-2 focus:outline-[#22c55e] focus:outline-offset-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                    className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-[#00FF7F] focus:outline-none"
                     placeholder="Your name"
                   />
                 </label>
 
                 <label className="space-y-2">
-                  <span className="font-mono text-xs tracking-[0.16em] text-slate-600 dark:text-slate-400">EMAIL</span>
+                  <span className="font-[Montserrat] text-xs tracking-[0.16em] text-white/65">EMAIL</span>
                   <input
                     type="email"
                     name="email"
                     value={formValues.email}
                     onChange={handleChange}
                     required
-                    className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:outline focus:outline-2 focus:outline-[#22c55e] focus:outline-offset-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                    className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-[#00FF7F] focus:outline-none"
                     placeholder="you@example.com"
                   />
                 </label>
               </div>
 
               <label className="mt-4 block space-y-2">
-                <span className="font-mono text-xs tracking-[0.16em] text-slate-600 dark:text-slate-400">SUBJECT</span>
+                <span className="font-[Montserrat] text-xs tracking-[0.16em] text-white/65">SUBJECT</span>
                 <input
                   type="text"
                   name="subject"
                   value={formValues.subject}
                   onChange={handleChange}
                   required
-                  className="w-full rounded-xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:outline focus:outline-2 focus:outline-[#22c55e] focus:outline-offset-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                  className="w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-[#00FF7F] focus:outline-none"
                   placeholder="Project inquiry, collaboration, or freelance work"
                 />
               </label>
 
               <label className="mt-4 block space-y-2">
-                <span className="font-mono text-xs tracking-[0.16em] text-slate-600 dark:text-slate-400">MESSAGE</span>
+                <span className="font-[Montserrat] text-xs tracking-[0.16em] text-white/65">MESSAGE</span>
                 <textarea
                   name="message"
                   value={formValues.message}
                   onChange={handleChange}
                   required
                   rows="6"
-                  className="w-full rounded-2xl border border-slate-300 bg-slate-50 px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:outline focus:outline-2 focus:outline-[#22c55e] focus:outline-offset-2 dark:border-slate-700 dark:bg-slate-950 dark:text-slate-100"
+                  className="w-full rounded-2xl border border-white/10 bg-black/30 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/35 focus:border-[#00FF7F] focus:outline-none"
                   placeholder="Tell me about your project, timeline, and what you need help with."
                 />
               </label>
@@ -188,15 +187,14 @@ export default function Contact() {
               <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center rounded-xl bg-[#22c55e] px-6 py-3 font-mono text-xs tracking-[0.18em] text-black transition hover:bg-[#22c55e]"
+                  className="inline-flex items-center justify-center rounded-full bg-[#FFD700] px-6 py-3 font-[Montserrat] text-xs font-bold tracking-[0.18em] text-black transition hover:bg-[#00FF7F]"
                 >
                   SEND MESSAGE
                 </button>
-                
               </div>
 
               {status && (
-                <p className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-800 dark:border-emerald-900 dark:bg-emerald-950 dark:text-emerald-200" aria-live="polite">
+                <p className="mt-4 rounded-xl border border-[#00FF7F]/30 bg-black/30 px-4 py-3 text-sm text-white/85" aria-live="polite">
                   {status}
                 </p>
               )}

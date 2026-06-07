@@ -30,13 +30,13 @@ const WHAT_I_DO = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-slate-100 px-6 py-28 dark:bg-slate-900">
+    <section id="skills" className="bg-[#0a0f1f] px-6 py-28">
       <div className="mx-auto w-full max-w-6xl">
         <FadeIn>
           <div className="mb-14">
-            <p className="font-mono text-xs tracking-[0.32em] text-[#22c55e]">02. WHAT I DO</p>
-            <h2 className="mt-3 font-[Syne] text-4xl font-extrabold text-slate-900 dark:text-slate-100">Skills & Services</h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-700 dark:text-slate-300">
+            <p className="font-[Montserrat] text-xs tracking-[0.32em] text-[#00FF7F]">02. WHAT I DO</p>
+            <h2 className="mt-3 font-[Montserrat] text-4xl font-extrabold text-[#FFD700]">Skills & Services</h2>
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80">
               Combining practical engineering skills with product thinking to build complete solutions from UI to API and database.
             </p>
           </div>
@@ -45,14 +45,14 @@ export default function Skills() {
         <div className="mb-12 grid gap-6 md:grid-cols-2">
           {WHAT_I_DO.map((item, index) => (
             <FadeIn key={item.title} delay={index * 0.08}>
-              <article className="rounded-2xl border border-slate-300 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-sky-400 dark:border-slate-800 dark:bg-slate-950">
-                <h3 className="font-[Syne] text-2xl font-bold text-slate-900 dark:text-slate-100">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-slate-700 dark:text-slate-300">{item.description}</p>
+              <article className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-[#00FF7F]/50">
+                <h3 className="font-[Montserrat] text-2xl font-extrabold text-[#FFD700]">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-white/80">{item.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {item.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-md border border-sky-300 bg-sky-100 px-2.5 py-1 font-mono text-xs text-sky-800 transition hover:border-[#22c55e] hover:bg-transparent hover:text-[#22c55e] dark:border-sky-900/50 dark:bg-sky-500/10 dark:text-sky-200"
+                      className="rounded-full border border-[#00FF7F]/30 bg-black/30 px-2.5 py-1 font-[Montserrat] text-xs text-white/85 transition hover:border-[#00FF7F] hover:text-[#00FF7F]"
                     >
                       {skill}
                     </span>
@@ -66,13 +66,13 @@ export default function Skills() {
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {Object.entries(SKILLS).map(([category, items], index) => (
             <FadeIn key={category} delay={index * 0.08}>
-              <article className="rounded-2xl border border-slate-300 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-emerald-400 dark:border-slate-800 dark:bg-slate-950">
-                <h3 className="font-mono text-xs tracking-[0.2em] text-emerald-800 dark:text-emerald-300">{category}</h3>
+              <article className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-[#FFD700]/40">
+                <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F]">{category}</h3>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {items.map((skill) => (
                     <span
                       key={skill}
-                      className="rounded-md border border-emerald-300 bg-emerald-100 px-3 py-1 font-mono text-xs text-emerald-900 transition hover:border-[#22c55e] hover:bg-transparent hover:text-[#22c55e] dark:border-emerald-900/50 dark:bg-emerald-500/10 dark:text-emerald-200"
+                      className="rounded-full border border-white/10 bg-black/30 px-3 py-1 font-[Montserrat] text-xs text-white/80 transition hover:border-[#FFD700] hover:text-[#FFD700]"
                     >
                       {skill}
                     </span>
@@ -84,9 +84,9 @@ export default function Skills() {
         </div>
 
         <FadeIn delay={0.25} className="mt-8">
-          <div className="rounded-2xl border border-sky-300 bg-sky-100 p-5 dark:border-sky-900/50 dark:bg-sky-500/10">
-            <p className="font-mono text-xs tracking-[0.18em] text-sky-800 dark:text-sky-300">CURRENTLY LEARNING</p>
-            <p className="mt-2 text-sm leading-7 text-sky-900 dark:text-sky-100">{CURRENTLY_LEARNING.join(" | ")}</p>
+          <div className="rounded-[1.75rem] border border-[#00FF7F]/20 bg-black/30 p-5">
+            <p className="font-[Montserrat] text-xs tracking-[0.18em] text-[#00FF7F]">CURRENTLY LEARNING</p>
+            <p className="mt-2 text-sm leading-7 text-white/85">{CURRENTLY_LEARNING.join(" | ")}</p>
           </div>
         </FadeIn>
       </div>
