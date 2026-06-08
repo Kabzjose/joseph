@@ -44,7 +44,7 @@ export default function Hero() {
             Joseph <span className="text-white">Ndungu</span>
           </h1>
 
-          <p className="mt-4 min-h-8 font-[Montserrat] text-sm tracking-[0.22em] text-white/80">
+          <p className="mt-4 min-h-8 font-[Montserrat] text-sm tracking-[0.22em] text-[#00FF7F]">
             {typed}
             <span className="ml-0.5 inline-block h-5 w-0.5 animate-pulse bg-[#00FF7F]" />
           </p>
