@@ -83,12 +83,6 @@ export default function Skills() {
           ))}
         </div>
 
-        <FadeIn delay={0.25} className="mt-8">
-          <div className="rounded-[1.75rem] border border-[#00FF7F]/20 bg-black/30 p-5">
-            <p className="font-[Montserrat] text-xs tracking-[0.18em] text-[#00FF7F]">CURRENTLY LEARNING</p>
-            <p className="mt-2 text-sm leading-7 text-white/85">{CURRENTLY_LEARNING.join(" | ")}</p>
-          </div>
-        </FadeIn>
       </div>
     </section>
   );

@@ -68,20 +68,6 @@ export default function Hero() {
             </a>
           </div>
 
-          <div className="mt-8 grid max-w-lg grid-cols-3 gap-3 text-center text-xs">
-            <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-4">
-              <p className="font-[Montserrat] text-2xl font-extrabold text-[#FFD700]">30+</p>
-              <p className="mt-1 font-[Montserrat] tracking-[0.14em] text-white/70">PROJECTS</p>
-            </div>
-            <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-4">
-              <p className="font-[Montserrat] text-2xl font-extrabold text-[#FFD700]">15+</p>
-              <p className="mt-1 font-[Montserrat] tracking-[0.14em] text-white/70">CLIENTS</p>
-            </div>
-            <div className="rounded-lg border border-white/10 bg-white/5 px-3 py-4">
-              <p className="font-[Montserrat] text-2xl font-extrabold text-[#FFD700]">3+</p>
-              <p className="mt-1 font-[Montserrat] tracking-[0.14em] text-white/70">YEARS</p>
-            </div>
-          </div>
         </div>
 
         <div className="relative mx-auto w-full max-w-sm">

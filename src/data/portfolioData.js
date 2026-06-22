@@ -1,3 +1,4 @@
+import paymentSystemImage from "../assets/paymentsystem.png";
 import vChatImage from "../assets/v-chat.png";
 import wildlifeTrackerImage from "../assets/wildlifetracker.png";
 import reelwiseImage from "../assets/reelwise.png";
@@ -23,6 +24,26 @@ export const SKILLS = {
 };
 
 export const PROJECTS = [
+
+  {
+    title: "Payment System",
+    tagline: "Full-Stack Payment Backend & Dashboard",
+    description:
+      "A production-grade payment system supporting Stripe card payments, M-Pesa mobile money via STK push, and recurring subscriptions. Features a full admin dashboard, webhook handling, idempotent processing, and a layered Node.js/Express/TypeScript backend backed by PostgreSQL.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Stripe", "M-Pesa", "JWT", "Zod"],
+    live: "https://payment-system-one-chi.vercel.app/",
+    features: [
+      "Stripe PaymentIntents & Webhooks",
+      "M-Pesa STK Push (Daraja API)",
+      "Recurring Subscriptions",
+      "Full Admin Dashboard",
+      "Refunds & Plan Changes",
+      "User Suspension System",
+      "Idempotent Webhook Processing",
+    ],
+    color: "#6366f1",
+    image: paymentSystemImage,
+  },
 
   {
     title: "V-Chat",
