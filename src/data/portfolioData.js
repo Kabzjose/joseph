@@ -1,3 +1,4 @@
+import mediCareImage from "../assets/MediCare.png";
 import paymentSystemImage from "../assets/paymentsystem.png";
 import vChatImage from "../assets/v-chat.png";
 import wildlifeTrackerImage from "../assets/wildlifetracker.png";
@@ -24,6 +25,26 @@ export const SKILLS = {
 };
 
 export const PROJECTS = [
+
+  {
+    title: "MediCare+",
+    tagline: "Full-Stack Healthcare Appointment Platform",
+    description:
+      "A production-grade appointment system with patient and doctor dashboards, conflict-safe scheduling, Stripe and M-Pesa payments, and automated SMS reminders. Built with a layered Node.js/Express/TypeScript backend on PostgreSQL, deployed with Docker and CI/CD.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Stripe", "M-Pesa", "JWT", "Zod", "Docker"],
+    live: "https://healthcare-system-eta.vercel.app",
+    features: [
+      "Patient & Doctor Dashboards",
+      "Conflict-Safe Scheduling",
+      "Stripe & M-Pesa Payments",
+      "Automated SMS Reminders",
+      "JWT Authentication",
+      "Docker Deployment",
+      "CI/CD Pipeline",
+    ],
+    color: "#0ea5e9",
+    image: mediCareImage,
+  },
 
   {
     title: "Payment System",
