@@ -1,3 +1,4 @@
+import dukaImage from "../assets/Duka.png";
 import mediCareImage from "../assets/MediCare.png";
 import paymentSystemImage from "../assets/paymentsystem.png";
 import vChatImage from "../assets/v-chat.png";
@@ -25,6 +26,28 @@ export const SKILLS = {
 };
 
 export const PROJECTS = [
+
+  {
+    title: "Duka",
+    tagline: "Full-Stack Delivery & E-Commerce Platform",
+    description:
+      "A production-grade delivery logistics platform with an integrated e-commerce storefront. Customers browse products, check out with M-Pesa or card, and orders automatically become tracked deliveries — complete with rider assignment, live GPS tracking, and an admin dashboard for managing bookings, riders, and inventory. Built with a layered Node.js/Express/TypeScript backend on PostgreSQL, a Next.js frontend, and deployed with CI/CD via GitHub Actions.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express", "PostgreSQL", "Prisma", "Socket.io", "M-Pesa", "Paystack", "JWT", "Zod", "GitHub Actions"],
+    live: "https://duka-ecommerce-three.vercel.app/",
+    features: [
+      "Customer, Rider & Admin Dashboards",
+      "E-Commerce Storefront (Products, Cart, Checkout)",
+      "Conflict-Safe Delivery State Machine",
+      "M-Pesa (Daraja) & Paystack Payments",
+      "Real-Time GPS Rider Tracking (Socket.io)",
+      "Automated SMS Notifications",
+      "JWT Authentication with Refresh Rotation",
+      "Zone-Based Delivery Pricing Engine",
+      "CI/CD Pipeline (GitHub Actions → Render)",
+    ],
+    color: "#10b981",
+    image: dukaImage,
+  },
 
   {
     title: "MediCare+",
