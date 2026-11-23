@@ -3,28 +3,28 @@ import { CURRENTLY_LEARNING, SKILLS } from "../data/portfolioData";
 
 const WHAT_I_DO = [
   {
-    title: "Software Development",
+    title: "Backend & API Architecture",
     description:
-      "Building modern, responsive web applications with clean architecture and smooth user experience.",
-    skills: SKILLS.Frontend.slice(0, 3),
+      "Designing secure RESTful APIs, JWT authentication with token rotation, Zod request validation, and centralized error handling.",
+    skills: ["Node.js", "Express", "TypeScript"],
   },
   {
-    title: "Backend APIs",
+    title: "Payment & External Integrations",
     description:
-      "Designing secure REST APIs, authentication flows, and production-ready server logic for web products.",
-    skills: SKILLS.Backend.slice(0, 3),
+      "Integrating M-Pesa (Daraja API) STK Push, Stripe PaymentIntents, webhook listeners with idempotent processing, and automated SMS alerts.",
+    skills: ["M-Pesa (Daraja)", "Stripe", "Webhooks"],
   },
   {
     title: "Database Engineering",
     description:
-      "Designing efficient database schemas, query optimization, and dependable data management workflows.",
-    skills: SKILLS.Databases.slice(0, 3),
+      "Relational schema modeling, index optimization, migrations with Prisma/SQL, and caching with Redis for fast, dependable data access.",
+    skills: ["PostgreSQL", "Prisma", "Redis"],
   },
   {
-    title: "UI/UX Systems",
+    title: "Full-Stack & Real-Time Systems",
     description:
-      "Translating product ideas into interfaces that are clear, responsive, and practical for real users.",
-    skills: SKILLS["UI/UX"].slice(0, 3),
+      "Building reactive Next.js & React interfaces powered by Socket.io WebSockets, AI model streaming (Gemini 1.5 Flash), and Docker deployments.",
+    skills: ["Next.js", "Socket.io", "Docker"],
   },
 ];
 
@@ -34,19 +34,20 @@ export default function Skills() {
       <div className="mx-auto w-full max-w-6xl">
         <FadeIn>
           <div className="mb-14">
-            <p className="font-[Montserrat] text-xs tracking-[0.32em] text-[#00FF7F]">02. WHAT I DO</p>
-            <h2 className="mt-3 font-[Montserrat] text-4xl font-extrabold text-[#FFD700]">Skills & Services</h2>
+            <p className="font-[Montserrat] text-xs tracking-[0.32em] text-[#00FF7F]">02. TECHNICAL SKILLS</p>
+            <h2 className="mt-3 font-[Montserrat] text-4xl font-extrabold text-[#FFD700]">Core Competencies</h2>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80">
-              Combining practical engineering skills with product thinking to build complete solutions from UI to API and database.
+              Hands-on experience developing dependable backend services, resilient database schemas, API integrations, and modern interactive frontends.
             </p>
           </div>
         </FadeIn>
 
+        {/* Highlight Cards */}
         <div className="mb-12 grid gap-6 md:grid-cols-2">
           {WHAT_I_DO.map((item, index) => (
             <FadeIn key={item.title} delay={index * 0.08}>
               <article className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-[#00FF7F]/50">
-                <h3 className="font-[Montserrat] text-2xl font-extrabold text-[#FFD700]">{item.title}</h3>
+                <h3 className="font-[Montserrat] text-xl font-extrabold text-[#FFD700]">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-white/80">{item.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {item.skills.map((skill) => (
@@ -63,11 +64,12 @@ export default function Skills() {
           ))}
         </div>
 
+        {/* Detailed Skills Categories */}
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {Object.entries(SKILLS).map(([category, items], index) => (
             <FadeIn key={category} delay={index * 0.08}>
               <article className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-[#FFD700]/40">
-                <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F]">{category}</h3>
+                <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F] uppercase">{category}</h3>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {items.map((skill) => (
                     <span
@@ -83,6 +85,22 @@ export default function Skills() {
           ))}
         </div>
 
+        {/* Continuous Learning */}
+        <FadeIn delay={0.3}>
+          <div className="mt-12 rounded-[1.75rem] border border-[#00FF7F]/20 bg-black/40 p-6">
+            <p className="font-[Montserrat] text-xs tracking-[0.24em] text-[#00FF7F]">CURRENTLY EXPANDING &amp; PRACTICING</p>
+            <div className="mt-4 flex flex-wrap gap-3">
+              {CURRENTLY_LEARNING.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 font-[Montserrat] text-xs text-white/90"
+                >
+                  ⚡ {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

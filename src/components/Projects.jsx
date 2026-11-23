@@ -2,11 +2,12 @@ import { useState, useEffect, useCallback } from "react";
 import FadeIn from "./FadeIn";
 import { PROJECTS } from "../data/portfolioData";
 
-/* ─── Modal ─────────────────────────────────────────────────────────────── */
+/* ─── Case Study Modal ─────────────────────────────────────────────────── */
 function ProjectModal({ project, onClose }) {
-  // close on Escape
   useEffect(() => {
-    const onKey = (e) => { if (e.key === "Escape") onClose(); };
+    const onKey = (e) => {
+      if (e.key === "Escape") onClose();
+    };
     document.addEventListener("keydown", onKey);
     document.body.style.overflow = "hidden";
     return () => {
@@ -15,9 +16,10 @@ function ProjectModal({ project, onClose }) {
     };
   }, [onClose]);
 
-  // close on backdrop click
   const onBackdrop = useCallback(
-    (e) => { if (e.target === e.currentTarget) onClose(); },
+    (e) => {
+      if (e.target === e.currentTarget) onClose();
+    },
     [onClose]
   );
 
@@ -25,109 +27,103 @@ function ProjectModal({ project, onClose }) {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`${project.title} details`}
+      aria-label={`${project.title} case study`}
       onClick={onBackdrop}
-      style={{
-        position: "fixed", inset: 0, zIndex: 999,
-        background: "rgba(5,8,22,0.82)",
-        backdropFilter: "blur(6px)",
-        display: "flex", alignItems: "center", justifyContent: "center",
-        padding: "16px",
-      }}
+      className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-[#050816]/85 backdrop-blur-md"
     >
-      <div
-        style={{
-          background: "linear-gradient(145deg, #0d1629 0%, #0a1020 100%)",
-          border: "1px solid rgba(255,255,255,0.10)",
-          borderRadius: "1.75rem",
-          width: "100%",
-          maxWidth: "760px",
-          maxHeight: "90vh",
-          overflowY: "auto",
-          boxShadow: "0 32px 80px rgba(0,0,0,0.6)",
-          position: "relative",
-        }}
-      >
-        {/* Close */}
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-gradient-to-br from-[#0d1629] to-[#0a1020] shadow-[0_32px_80px_rgba(0,0,0,0.7)] text-left">
+        {/* Close Button */}
         <button
           onClick={onClose}
           aria-label="Close modal"
-          style={{
-            position: "absolute", top: "16px", right: "16px", zIndex: 10,
-            background: "rgba(255,255,255,0.08)",
-            border: "1px solid rgba(255,255,255,0.12)",
-            borderRadius: "50%", width: "36px", height: "36px",
-            color: "#fff", fontSize: "18px", lineHeight: 1,
-            cursor: "pointer", display: "flex", alignItems: "center",
-            justifyContent: "center", transition: "background 0.2s",
-          }}
-          onMouseEnter={e => e.currentTarget.style.background = "rgba(255,255,255,0.15)"}
-          onMouseLeave={e => e.currentTarget.style.background = "rgba(255,255,255,0.08)"}
+          className="absolute top-4 right-4 z-20 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-white/10 text-white transition hover:bg-white/20"
         >
           ✕
         </button>
 
-        {/* Image */}
-        <div style={{ height: "260px", overflow: "hidden", borderRadius: "1.75rem 1.75rem 0 0", position: "relative", background: "#0a1020" }}>
+        {/* Thumbnail Preview */}
+        <div className="relative h-64 overflow-hidden rounded-t-3xl bg-[#0a1020]">
           <img
             src={project.image}
             alt={`${project.title} screenshot`}
-            style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            className="h-full w-full object-cover"
           />
-          <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, #0a1020 0%, transparent 55%)" }} />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0d1629] via-transparent to-transparent" />
+          <div className="absolute top-4 left-4 flex gap-2">
+            {project.featured && (
+              <span className="rounded-full border border-[#00FF7F]/40 bg-black/60 px-3 py-1 font-[Montserrat] text-[10px] font-bold tracking-wider text-[#00FF7F] backdrop-blur-sm">
+                FEATURED CASE STUDY
+              </span>
+            )}
+            <span className="rounded-full border border-white/20 bg-black/60 px-3 py-1 font-[Montserrat] text-[10px] tracking-wider text-white/80 backdrop-blur-sm">
+              {project.category}
+            </span>
+          </div>
         </div>
 
-        {/* Body */}
-        <div style={{ padding: "28px 32px 32px" }}>
-          {/* Title & tagline */}
-          <p style={{ fontFamily: "Montserrat,sans-serif", fontSize: "11px", letterSpacing: "0.28em", color: "#00FF7F", marginBottom: "6px" }}>
-            {project.tagline}
-          </p>
-          <h2 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "26px", fontWeight: 800, color: "#FFD700", margin: "0 0 16px" }}>
-            {project.title}
-          </h2>
+        {/* Content Body */}
+        <div className="p-6 sm:p-8 space-y-6">
+          <div>
+            <p className="font-[Montserrat] text-xs tracking-[0.24em] text-[#00FF7F] uppercase">
+              {project.tagline}
+            </p>
+            <h2 className="mt-1 font-[Montserrat] text-2xl sm:text-3xl font-extrabold text-[#FFD700]">
+              {project.title}
+            </h2>
+          </div>
 
-          {/* Description */}
-          <p style={{ fontSize: "14px", lineHeight: 1.75, color: "rgba(255,255,255,0.80)", marginBottom: "24px" }}>
-            {project.description}
-          </p>
+          {/* Overview */}
+          <div>
+            <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F]">
+              01. OVERVIEW &amp; PROBLEM SOLVED
+            </h3>
+            <p className="mt-2 text-sm sm:text-base leading-relaxed text-white/85">
+              {project.description}
+            </p>
+          </div>
 
-          {/* Features */}
-          {project.features?.length > 0 && (
-            <div style={{ marginBottom: "24px" }}>
-              <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "11px", letterSpacing: "0.22em", color: "#00FF7F", marginBottom: "12px" }}>
-                KEY FEATURES
+          {/* Architecture & Engineering Highlights */}
+          {project.architecture && (
+            <div className="rounded-2xl border border-white/10 bg-black/30 p-4 sm:p-5">
+              <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#FFD700]">
+                02. SYSTEM ARCHITECTURE &amp; TECHNICAL CHALLENGES
               </h3>
-              <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+              <p className="mt-2 text-sm leading-relaxed text-white/80">
+                {project.architecture}
+              </p>
+            </div>
+          )}
+
+          {/* Key Features */}
+          {project.features?.length > 0 && (
+            <div>
+              <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F]">
+                03. KEY ENGINEERING FEATURES
+              </h3>
+              <ul className="mt-3 grid gap-2.5 sm:grid-cols-2">
                 {project.features.map((f) => (
-                  <li key={f} style={{ display: "flex", alignItems: "flex-start", gap: "10px", fontSize: "13px", color: "rgba(255,255,255,0.75)" }}>
-                    <span style={{ color: "#00FF7F", flexShrink: 0, marginTop: "2px" }}>✦</span>
-                    {f}
+                  <li
+                    key={f}
+                    className="flex items-start gap-2.5 rounded-xl border border-white/5 bg-white/5 p-3 text-xs leading-relaxed text-white/85"
+                  >
+                    <span className="text-[#00FF7F] font-bold">✦</span>
+                    <span>{f}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
-          {/* Tech */}
-          <div style={{ marginBottom: "28px" }}>
-            <h3 style={{ fontFamily: "Montserrat,sans-serif", fontSize: "11px", letterSpacing: "0.22em", color: "#00FF7F", marginBottom: "12px" }}>
-              TECHNOLOGIES
+          {/* Technologies */}
+          <div>
+            <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F]">
+              04. TECHNOLOGY STACK
             </h3>
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+            <div className="mt-3 flex flex-wrap gap-2">
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  style={{
-                    borderRadius: "999px",
-                    border: "1px solid rgba(255,255,255,0.12)",
-                    background: "rgba(0,0,0,0.30)",
-                    padding: "4px 12px",
-                    fontFamily: "Montserrat,sans-serif",
-                    fontSize: "11px",
-                    letterSpacing: "0.06em",
-                    color: "rgba(255,255,255,0.80)",
-                  }}
+                  className="rounded-full border border-white/10 bg-black/40 px-3 py-1 font-[Montserrat] text-xs text-white/80"
                 >
                   {t}
                 </span>
@@ -135,30 +131,21 @@ function ProjectModal({ project, onClose }) {
             </div>
           </div>
 
-          {/* Action buttons */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+          {/* Cold-start disclaimer */}
+          <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-200/90">
+            ℹ️ <strong>Live Demo Note:</strong> Free tier cloud services (e.g. Render) spin down during idle periods. Please allow ~30 seconds for the backend to wake up on the initial request.
+          </div>
+
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center gap-3 pt-2">
             {project.live && (
               <a
                 href={project.live}
                 target="_blank"
                 rel="noreferrer"
-                style={{
-                  borderRadius: "999px",
-                  background: "#00FF7F",
-                  border: "1px solid #00FF7F",
-                  padding: "10px 24px",
-                  fontFamily: "Montserrat,sans-serif",
-                  fontSize: "11px",
-                  fontWeight: 700,
-                  letterSpacing: "0.18em",
-                  color: "#000",
-                  textDecoration: "none",
-                  transition: "background 0.2s",
-                }}
-                onMouseEnter={e => e.currentTarget.style.background = "#fff"}
-                onMouseLeave={e => e.currentTarget.style.background = "#00FF7F"}
+                className="inline-flex items-center gap-2 rounded-full bg-[#00FF7F] px-6 py-2.5 font-[Montserrat] text-xs font-bold tracking-wider text-black transition hover:bg-white"
               >
-                LIVE DEMO
+                LIVE DEMO ↗
               </a>
             )}
             {project.repo && (
@@ -166,42 +153,24 @@ function ProjectModal({ project, onClose }) {
                 href={project.repo}
                 target="_blank"
                 rel="noreferrer"
-                style={{
-                  borderRadius: "999px",
-                  border: "1px solid #FFD700",
-                  padding: "10px 24px",
-                  fontFamily: "Montserrat,sans-serif",
-                  fontSize: "11px",
-                  fontWeight: 700,
-                  letterSpacing: "0.18em",
-                  color: "#FFD700",
-                  textDecoration: "none",
-                  transition: "background 0.2s, color 0.2s",
-                  background: "transparent",
-                }}
-                onMouseEnter={e => { e.currentTarget.style.background = "#FFD700"; e.currentTarget.style.color = "#000"; }}
-                onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#FFD700"; }}
+                className="inline-flex items-center gap-2 rounded-full border border-[#FFD700] bg-transparent px-6 py-2.5 font-[Montserrat] text-xs font-bold tracking-wider text-[#FFD700] transition hover:bg-[#FFD700] hover:text-black"
               >
-                GITHUB
+                GITHUB REPO ↗
+              </a>
+            )}
+            {project.api && (
+              <a
+                href={project.api}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-5 py-2.5 font-[Montserrat] text-xs font-semibold tracking-wider text-white/80 transition hover:bg-white/15"
+              >
+                API ENDPOINT ↗
               </a>
             )}
             <button
               onClick={onClose}
-              style={{
-                borderRadius: "999px",
-                border: "1px solid rgba(255,255,255,0.15)",
-                padding: "10px 24px",
-                fontFamily: "Montserrat,sans-serif",
-                fontSize: "11px",
-                fontWeight: 700,
-                letterSpacing: "0.18em",
-                color: "rgba(255,255,255,0.55)",
-                background: "transparent",
-                cursor: "pointer",
-                transition: "border-color 0.2s, color 0.2s",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.35)"; e.currentTarget.style.color = "#fff"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; e.currentTarget.style.color = "rgba(255,255,255,0.55)"; }}
+              className="ml-auto rounded-full border border-white/15 px-5 py-2.5 font-[Montserrat] text-xs font-semibold tracking-wider text-white/60 transition hover:text-white hover:border-white/40"
             >
               CLOSE
             </button>
@@ -212,7 +181,7 @@ function ProjectModal({ project, onClose }) {
   );
 }
 
-/* ─── Card ───────────────────────────────────────────────────────────────── */
+/* ─── Project Card ─────────────────────────────────────────────────────── */
 function ProjectCard({ project, onOpen }) {
   const MAX_TAGS = 4;
   const visibleTech = project.tech.slice(0, MAX_TAGS);
@@ -221,210 +190,106 @@ function ProjectCard({ project, onOpen }) {
   return (
     <article
       onClick={onOpen}
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        borderRadius: "1.25rem",
-        border: "1px solid rgba(255,255,255,0.08)",
-        background: "rgba(255,255,255,0.04)",
-        overflow: "hidden",
-        cursor: "pointer",
-        transition: "transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease",
-        boxShadow: "0 8px 30px rgba(0,0,0,0.25)",
-      }}
-      onMouseEnter={e => {
-        e.currentTarget.style.transform = "translateY(-4px)";
-        e.currentTarget.style.borderColor = "rgba(0,255,127,0.35)";
-        e.currentTarget.style.boxShadow = "0 18px 48px rgba(0,0,0,0.40)";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.transform = "translateY(0)";
-        e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
-        e.currentTarget.style.boxShadow = "0 8px 30px rgba(0,0,0,0.25)";
-      }}
       role="button"
       tabIndex={0}
-      aria-label={`View details for ${project.title}`}
-      onKeyDown={e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); onOpen(); } }}
+      aria-label={`View case study for ${project.title}`}
+      onKeyDown={(e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onOpen();
+        }
+      }}
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] transition duration-300 hover:-translate-y-1 hover:border-[#00FF7F]/40 hover:shadow-[0_20px_45px_rgba(0,0,0,0.45)] text-left cursor-pointer"
     >
-      {/* Thumbnail — fixed 16/9 ratio */}
-      <div style={{ position: "relative", paddingTop: "56.25%", background: "#0a1020", overflow: "hidden" }}>
+      {/* Thumbnail */}
+      <div className="relative aspect-[16/9] w-full overflow-hidden bg-[#0a1020]">
         <img
           src={project.image}
           alt={`${project.title} preview`}
-          style={{
-            position: "absolute", inset: 0,
-            width: "100%", height: "100%",
-            objectFit: "cover",
-            transition: "transform 0.5s ease",
-          }}
-          className="card-thumb"
+          className="h-full w-full object-cover transition duration-500 group-hover:scale-105"
         />
-        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to top, rgba(7,11,20,0.85) 0%, transparent 55%)" }} />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#070b14] via-transparent to-transparent" />
 
-        {/* Accent dot */}
-        <div style={{
-          position: "absolute", top: "12px", right: "12px",
-          width: "8px", height: "8px", borderRadius: "50%",
-          background: project.color || "#00FF7F",
-          boxShadow: `0 0 8px ${project.color || "#00FF7F"}`,
-        }} />
+        {project.featured && (
+          <span className="absolute top-3 left-3 rounded-full border border-[#00FF7F]/40 bg-black/70 px-2.5 py-0.5 font-[Montserrat] text-[10px] font-bold tracking-wider text-[#00FF7F] backdrop-blur-sm">
+            FLAGSHIP
+          </span>
+        )}
+
+        <div
+          className="absolute top-3 right-3 h-2 w-2 rounded-full"
+          style={{
+            backgroundColor: project.color || "#00FF7F",
+            boxShadow: `0 0 10px ${project.color || "#00FF7F"}`,
+          }}
+        />
       </div>
 
-      {/* Info */}
-      <div style={{ display: "flex", flexDirection: "column", flex: 1, padding: "16px 18px 18px" }}>
-        {/* Category */}
-        <p style={{
-          fontFamily: "Montserrat,sans-serif",
-          fontSize: "9px",
-          letterSpacing: "0.28em",
-          color: "#00FF7F",
-          marginBottom: "5px",
-          textTransform: "uppercase",
-          whiteSpace: "nowrap",
-          overflow: "hidden",
-          textOverflow: "ellipsis",
-        }}>
+      {/* Info Container */}
+      <div className="flex flex-1 flex-col p-5">
+        <p className="truncate font-[Montserrat] text-[10px] tracking-[0.24em] text-[#00FF7F] uppercase">
           {project.tagline}
         </p>
-
-        {/* Title */}
-        <h3 style={{
-          fontFamily: "Montserrat,sans-serif",
-          fontSize: "16px",
-          fontWeight: 800,
-          color: "#FFD700",
-          marginBottom: "12px",
-          lineHeight: 1.3,
-          display: "-webkit-box",
-          WebkitLineClamp: 2,
-          WebkitBoxOrient: "vertical",
-          overflow: "hidden",
-        }}>
+        <h3 className="mt-1 line-clamp-1 font-[Montserrat] text-lg font-extrabold text-[#FFD700]">
           {project.title}
         </h3>
 
+        <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-white/70">
+          {project.description}
+        </p>
+
         {/* Tech tags */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginBottom: "16px" }}>
+        <div className="mt-4 flex flex-wrap gap-1.5">
           {visibleTech.map((t) => (
             <span
               key={t}
-              style={{
-                borderRadius: "999px",
-                border: "1px solid rgba(255,255,255,0.10)",
-                background: "rgba(0,0,0,0.28)",
-                padding: "3px 9px",
-                fontFamily: "Montserrat,sans-serif",
-                fontSize: "10px",
-                letterSpacing: "0.04em",
-                color: "rgba(255,255,255,0.72)",
-              }}
+              className="rounded-full border border-white/10 bg-black/30 px-2.5 py-0.5 font-[Montserrat] text-[10px] text-white/75"
             >
               {t}
             </span>
           ))}
           {extraCount > 0 && (
-            <span style={{
-              borderRadius: "999px",
-              border: "1px solid rgba(255,215,0,0.25)",
-              background: "rgba(255,215,0,0.07)",
-              padding: "3px 9px",
-              fontFamily: "Montserrat,sans-serif",
-              fontSize: "10px",
-              letterSpacing: "0.04em",
-              color: "rgba(255,215,0,0.75)",
-            }}>
+            <span className="rounded-full border border-[#FFD700]/30 bg-[#FFD700]/10 px-2 py-0.5 font-[Montserrat] text-[10px] text-[#FFD700]">
               +{extraCount}
             </span>
           )}
         </div>
 
-        {/* Spacer to push buttons down */}
-        <div style={{ flex: 1 }} />
+        <div className="flex-1" />
 
-        {/* Buttons row */}
-        <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+        {/* Action Buttons */}
+        <div className="mt-5 flex items-center gap-2 pt-2 border-t border-white/5">
           <button
-            onClick={e => { e.stopPropagation(); onOpen(); }}
-            style={{
-              flex: "1 1 0",
-              minWidth: 0,
-              borderRadius: "999px",
-              border: "1px solid rgba(255,255,255,0.15)",
-              background: "rgba(255,255,255,0.06)",
-              padding: "7px 10px",
-              fontFamily: "Montserrat,sans-serif",
-              fontSize: "9px",
-              fontWeight: 700,
-              letterSpacing: "0.16em",
-              color: "#fff",
-              cursor: "pointer",
-              transition: "background 0.2s, border-color 0.2s",
-              whiteSpace: "nowrap",
+            onClick={(e) => {
+              e.stopPropagation();
+              onOpen();
             }}
-            onMouseEnter={e => { e.currentTarget.style.background = "rgba(255,255,255,0.12)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.3)"; }}
-            onMouseLeave={e => { e.currentTarget.style.background = "rgba(255,255,255,0.06)"; e.currentTarget.style.borderColor = "rgba(255,255,255,0.15)"; }}
+            className="flex-1 rounded-full border border-white/15 bg-white/5 py-2 text-center font-[Montserrat] text-[10px] font-bold tracking-wider text-white transition hover:bg-white/15"
           >
-            VIEW DETAILS
+            CASE STUDY
           </button>
-
-          {project.live && (
-            <a
-              href={project.live}
-              target="_blank"
-              rel="noreferrer"
-              onClick={e => e.stopPropagation()}
-              style={{
-                flex: "1 1 0",
-                minWidth: 0,
-                borderRadius: "999px",
-                border: "1px solid #00FF7F",
-                background: "#00FF7F",
-                padding: "7px 10px",
-                fontFamily: "Montserrat,sans-serif",
-                fontSize: "9px",
-                fontWeight: 700,
-                letterSpacing: "0.16em",
-                color: "#000",
-                textDecoration: "none",
-                textAlign: "center",
-                transition: "background 0.2s",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={e => e.currentTarget.style.background = "#fff"}
-              onMouseLeave={e => e.currentTarget.style.background = "#00FF7F"}
-            >
-              LIVE DEMO
-            </a>
-          )}
-
           {project.repo && (
             <a
               href={project.repo}
               target="_blank"
               rel="noreferrer"
-              onClick={e => e.stopPropagation()}
-              style={{
-                flex: "1 1 0",
-                minWidth: 0,
-                borderRadius: "999px",
-                border: "1px solid #FFD700",
-                background: "transparent",
-                padding: "7px 10px",
-                fontFamily: "Montserrat,sans-serif",
-                fontSize: "9px",
-                fontWeight: 700,
-                letterSpacing: "0.16em",
-                color: "#FFD700",
-                textDecoration: "none",
-                textAlign: "center",
-                transition: "background 0.2s, color 0.2s",
-                whiteSpace: "nowrap",
-              }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#FFD700"; e.currentTarget.style.color = "#000"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "transparent"; e.currentTarget.style.color = "#FFD700"; }}
+              onClick={(e) => e.stopPropagation()}
+              className="rounded-full border border-[#FFD700] px-3 py-2 text-center font-[Montserrat] text-[10px] font-bold tracking-wider text-[#FFD700] transition hover:bg-[#FFD700] hover:text-black"
+              title="GitHub Code"
             >
-              GITHUB
+              CODE
+            </a>
+          )}
+          {project.live && (
+            <a
+              href={project.live}
+              target="_blank"
+              rel="noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="rounded-full bg-[#00FF7F] px-3 py-2 text-center font-[Montserrat] text-[10px] font-bold tracking-wider text-black transition hover:bg-white"
+              title="Live Demo"
+            >
+              DEMO ↗
             </a>
           )}
         </div>
@@ -433,32 +298,65 @@ function ProjectCard({ project, onOpen }) {
   );
 }
 
-/* ─── Section ────────────────────────────────────────────────────────────── */
+/* ─── Projects Section ─────────────────────────────────────────────────── */
+const TABS = [
+  { id: "featured", label: "Featured Systems" },
+  { id: "all", label: "All Projects" },
+  { id: "fullstack", label: "Full-Stack & Systems" },
+  { id: "ai", label: "AI & Real-Time" },
+  { id: "backend", label: "Backend & APIs" },
+];
+
 export default function Projects() {
+  const [activeTab, setActiveTab] = useState("featured");
   const [selected, setSelected] = useState(null);
+
+  const filteredProjects = PROJECTS.filter((p) => {
+    if (activeTab === "featured") return p.featured;
+    if (activeTab === "all") return true;
+    if (activeTab === "fullstack") return p.category === "Full-Stack & Systems";
+    if (activeTab === "ai") return p.category === "AI & Real-Time" || p.category === "Real-Time & Distributed";
+    if (activeTab === "backend") return p.category === "Backend & APIs" || p.category === "Fintech & Backend";
+    return true;
+  });
 
   return (
     <>
       <section id="projects" className="bg-[#070b14] px-6 py-28">
         <div className="mx-auto w-full max-w-6xl">
           <FadeIn>
-            <div className="mb-14">
-              <p className="font-[Montserrat] text-xs tracking-[0.32em] text-[#00FF7F]">03. PROJECTS</p>
-              <h2 className="mt-3 font-[Montserrat] text-4xl font-extrabold text-[#FFD700]">Featured Work</h2>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10">
+              <div>
+                <p className="font-[Montserrat] text-xs tracking-[0.32em] text-[#00FF7F]">03. ENGINEERING PORTFOLIO</p>
+                <h2 className="mt-3 font-[Montserrat] text-4xl font-extrabold text-[#FFD700]">Featured Work &amp; Case Studies</h2>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-white/75">
+                  Production systems built with TypeScript, Node.js, PostgreSQL, payment gateways, and real-time architectures.
+                </p>
+              </div>
+
+              {/* Filter Tabs */}
+              <div className="flex flex-wrap gap-2">
+                {TABS.map((tab) => (
+                  <button
+                    key={tab.id}
+                    onClick={() => setActiveTab(tab.id)}
+                    className={`rounded-full px-4 py-1.5 font-[Montserrat] text-xs font-semibold tracking-wider transition ${
+                      activeTab === tab.id
+                        ? "bg-[#00FF7F] text-black shadow-md"
+                        : "border border-white/10 bg-white/5 text-white/70 hover:border-white/30 hover:text-white"
+                    }`}
+                  >
+                    {tab.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </FadeIn>
 
-          {/* 3-col responsive grid */}
-          <div
-            style={{
-              display: "grid",
-              gap: "20px",
-              gridTemplateColumns: "repeat(3, minmax(0, 1fr))",
-            }}
-            className="projects-grid"
-          >
-            {PROJECTS.map((project, index) => (
-              <FadeIn key={project.title} delay={index * 0.06}>
+          {/* Grid */}
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {filteredProjects.map((project, index) => (
+              <FadeIn key={project.title} delay={index * 0.05}>
                 <ProjectCard project={project} onOpen={() => setSelected(project)} />
               </FadeIn>
             ))}
@@ -466,21 +364,10 @@ export default function Projects() {
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Case Study Modal */}
       {selected && (
         <ProjectModal project={selected} onClose={() => setSelected(null)} />
       )}
-
-      {/* Responsive breakpoints via a style tag */}
-      <style>{`
-        @media (max-width: 900px) {
-          .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)) !important; }
-        }
-        @media (max-width: 560px) {
-          .projects-grid { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; }
-        }
-        .card-thumb:hover { transform: scale(1.06); }
-      `}</style>
     </>
   );
 }

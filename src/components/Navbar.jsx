@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NAV_LINKS } from "../data/portfolioData";
+import { NAV_LINKS, RESUME_PATH } from "../data/portfolioData";
 
 export default function Navbar({ active, setActive }) {
   const [scrolled, setScrolled] = useState(false);
@@ -33,7 +33,7 @@ export default function Navbar({ active, setActive }) {
           Joseph Ndungu
         </button>
 
-        <div className="hidden items-center gap-7 md:flex">
+        <div className="hidden items-center gap-6 md:flex">
           {NAV_LINKS.map((link) => (
             <button
               key={link.id}
@@ -47,8 +47,19 @@ export default function Navbar({ active, setActive }) {
               {link.label}
             </button>
           ))}
+
+          <a
+            href={RESUME_PATH}
+            target="_blank"
+            rel="noreferrer"
+            download="Joseph_Ndungu_CV.pdf"
+            className="rounded-full border border-[#00FF7F] bg-[#00FF7F]/10 px-4 py-2 font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F] transition hover:-translate-y-0.5 hover:bg-[#00FF7F] hover:text-black"
+          >
+            RESUME
+          </a>
+
           <button
-            onClick={() => window.open("https://github.com/kabzjose", "_blank", "noreferrer")}
+            onClick={() => window.open("https://github.com/Kabzjose", "_blank", "noreferrer")}
             className="rounded-full border border-[#FFD700] bg-[#FFD700] px-4 py-2 font-[Montserrat] text-xs font-bold tracking-[0.22em] text-black transition hover:-translate-y-0.5 hover:bg-[#00FF7F]"
             aria-label="Open GitHub profile"
           >
@@ -57,12 +68,21 @@ export default function Navbar({ active, setActive }) {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
+          <a
+            href={RESUME_PATH}
+            target="_blank"
+            rel="noreferrer"
+            download="Joseph_Ndungu_CV.pdf"
+            className="rounded-full border border-[#00FF7F] px-3 py-1 font-[Montserrat] text-[10px] font-bold tracking-[0.16em] text-[#00FF7F]"
+          >
+            RESUME
+          </a>
           <button
             onClick={() => setMenuOpen((prev) => !prev)}
             className="rounded-md border border-white/20 bg-white/5 p-2 text-white"
             aria-label="Toggle menu"
           >
-            {menuOpen ? "X" : "Menu"}
+            {menuOpen ? "✕" : "☰"}
           </button>
         </div>
       </div>
@@ -80,12 +100,23 @@ export default function Navbar({ active, setActive }) {
               {link.label}
             </button>
           ))}
-          <button
-            onClick={() => window.open("https://github.com/kabzjose", "_blank", "noreferrer")}
-            className="mt-3 w-full rounded-full bg-[#FFD700] px-4 py-3 font-[Montserrat] text-xs font-bold tracking-[0.22em] text-black"
-          >
-            GITHUB
-          </button>
+          <div className="mt-4 flex flex-col gap-2">
+            <a
+              href={RESUME_PATH}
+              target="_blank"
+              rel="noreferrer"
+              download="Joseph_Ndungu_CV.pdf"
+              className="w-full rounded-full border border-[#00FF7F] bg-[#00FF7F]/10 py-3 text-center font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F]"
+            >
+              DOWNLOAD RESUME (PDF)
+            </a>
+            <button
+              onClick={() => window.open("https://github.com/Kabzjose", "_blank", "noreferrer")}
+              className="w-full rounded-full bg-[#FFD700] py-3 font-[Montserrat] text-xs font-bold tracking-[0.22em] text-black"
+            >
+              GITHUB
+            </button>
+          </div>
         </div>
       )}
     </nav>
