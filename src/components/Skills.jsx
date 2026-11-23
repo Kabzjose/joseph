@@ -1,5 +1,6 @@
 import FadeIn from "./FadeIn";
 import { CURRENTLY_LEARNING, SKILLS } from "../data/portfolioData";
+import TechBadge from "./TechBadge";
 
 const WHAT_I_DO = [
   {
@@ -12,7 +13,7 @@ const WHAT_I_DO = [
     title: "Payment & External Integrations",
     description:
       "Integrating M-Pesa (Daraja API) STK Push, Stripe PaymentIntents, webhook listeners with idempotent processing, and automated SMS alerts.",
-    skills: ["M-Pesa (Daraja)", "Stripe", "Webhooks"],
+    skills: ["Stripe", "M-Pesa (Daraja)", "Webhooks"],
   },
   {
     title: "Database Engineering",
@@ -30,33 +31,36 @@ const WHAT_I_DO = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="bg-[#0a0f1f] px-6 py-28">
+    <section id="skills" className="relative bg-[#080C15] px-6 py-28 border-t border-slate-900">
       <div className="mx-auto w-full max-w-6xl">
         <FadeIn>
           <div className="mb-14">
-            <p className="font-[Montserrat] text-xs tracking-[0.32em] text-[#00FF7F]">02. TECHNICAL SKILLS</p>
-            <h2 className="mt-3 font-[Montserrat] text-4xl font-extrabold text-[#FFD700]">Core Competencies</h2>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-white/80">
+            <p className="font-[Montserrat] text-xs font-semibold tracking-[0.28em] text-[#10B981]">
+              02. TECHNICAL SKILLS
+            </p>
+            <h2 className="mt-2.5 font-[Montserrat] text-4xl font-extrabold tracking-tight text-[#FFD700] sm:text-5xl">
+              Core Competencies &amp; Services
+            </h2>
+            <p className="mt-3.5 max-w-2xl text-base leading-relaxed text-slate-300">
               Hands-on experience developing dependable backend services, resilient database schemas, API integrations, and modern interactive frontends.
             </p>
           </div>
         </FadeIn>
 
         {/* Highlight Cards */}
-        <div className="mb-12 grid gap-6 md:grid-cols-2">
+        <div className="mb-14 grid gap-6 md:grid-cols-2">
           {WHAT_I_DO.map((item, index) => (
             <FadeIn key={item.title} delay={index * 0.08}>
-              <article className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-[#00FF7F]/50">
-                <h3 className="font-[Montserrat] text-xl font-extrabold text-[#FFD700]">{item.title}</h3>
-                <p className="mt-3 text-sm leading-7 text-white/80">{item.description}</p>
-                <div className="mt-4 flex flex-wrap gap-2">
+              <article className="group rounded-2xl border border-slate-800/80 bg-slate-900/50 p-6 shadow-sm backdrop-blur-sm transition duration-300 hover:-translate-y-1 hover:border-[#FFD700]/50 hover:bg-slate-900/70">
+                <h3 className="font-[Montserrat] text-xl font-bold text-[#FFD700] transition group-hover:text-[#FFE033]">
+                  {item.title}
+                </h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">
+                  {item.description}
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
                   {item.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-[#00FF7F]/30 bg-black/30 px-2.5 py-1 font-[Montserrat] text-xs text-white/85 transition hover:border-[#00FF7F] hover:text-[#00FF7F]"
-                    >
-                      {skill}
-                    </span>
+                    <TechBadge key={skill} name={skill} size="sm" />
                   ))}
                 </div>
               </article>
@@ -64,20 +68,22 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Detailed Skills Categories */}
+        {/* Detailed Skills Categories with TechBadges */}
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {Object.entries(SKILLS).map(([category, items], index) => (
-            <FadeIn key={category} delay={index * 0.08}>
-              <article className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-[0_18px_50px_rgba(0,0,0,0.22)] transition hover:-translate-y-1 hover:border-[#FFD700]/40">
-                <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#00FF7F] uppercase">{category}</h3>
-                <div className="mt-5 flex flex-wrap gap-2">
+            <FadeIn key={category} delay={index * 0.07}>
+              <article className="rounded-2xl border border-slate-800/80 bg-slate-900/40 p-6 backdrop-blur-sm transition hover:border-[#FFD700]/40">
+                <div className="flex items-center justify-between border-b border-slate-800/80 pb-3">
+                  <h3 className="font-[Montserrat] text-xs font-bold tracking-[0.2em] text-[#10B981] uppercase">
+                    {category}
+                  </h3>
+                  <span className="font-[Montserrat] text-[10px] text-slate-400">
+                    {items.length} skills
+                  </span>
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
                   {items.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-full border border-white/10 bg-black/30 px-3 py-1 font-[Montserrat] text-xs text-white/80 transition hover:border-[#FFD700] hover:text-[#FFD700]"
-                    >
-                      {skill}
-                    </span>
+                    <TechBadge key={skill} name={skill} size="sm" />
                   ))}
                 </div>
               </article>
@@ -86,14 +92,19 @@ export default function Skills() {
         </div>
 
         {/* Continuous Learning */}
-        <FadeIn delay={0.3}>
-          <div className="mt-12 rounded-[1.75rem] border border-[#00FF7F]/20 bg-black/40 p-6">
-            <p className="font-[Montserrat] text-xs tracking-[0.24em] text-[#00FF7F]">CURRENTLY EXPANDING &amp; PRACTICING</p>
-            <div className="mt-4 flex flex-wrap gap-3">
+        <FadeIn delay={0.25}>
+          <div className="mt-12 rounded-2xl border border-[#FFD700]/25 bg-[#FFD700]/[0.04] p-6 backdrop-blur-sm">
+            <div className="flex items-center gap-2">
+              <span className="h-2 w-2 rounded-full bg-[#FFD700]" />
+              <p className="font-[Montserrat] text-xs font-semibold tracking-[0.2em] text-[#FFD700] uppercase">
+                Currently Expanding &amp; Practicing
+              </p>
+            </div>
+            <div className="mt-4 flex flex-wrap gap-2.5">
               {CURRENTLY_LEARNING.map((item) => (
                 <span
                   key={item}
-                  className="rounded-lg border border-white/15 bg-white/5 px-3 py-1.5 font-[Montserrat] text-xs text-white/90"
+                  className="rounded-lg border border-slate-800 bg-slate-900/80 px-3 py-1.5 font-[Montserrat] text-xs font-medium text-slate-200"
                 >
                   ⚡ {item}
                 </span>

@@ -62,7 +62,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#070b14] text-white transition-colors">
+    <div className="min-h-screen bg-[#090D16] text-[#F8FAFC] transition-colors selection:bg-emerald-500/25 selection:text-white">
       <div id="cursor-glow" ref={cursorRef} />
       <div className="relative z-10">
         <Navbar active={activeNav} setActive={setActiveNav} />
