@@ -9,6 +9,8 @@ import jobTrackerImage from "../assets/jobtracker.png";
 import classReminderImage from "../assets/classreminder.png";
 import summitImage from "../assets/summit.png";
 import peachStateImage from "../assets/peachstate.png";
+import reconcileImage from "../assets/reconcile.png";
+import kramhausImage from "../assets/kramhaus.png";
 
 export const RESUME_PATH = "/Joseph_Ndungu_CV.pdf";
 
@@ -80,14 +82,51 @@ export const SKILLS = {
 
 export const PROJECTS = [
   {
-    title: "Duka",
-    tagline: "Full-Stack Delivery & E-Commerce Platform",
+    title: "MediCare+",
+    tagline: "Healthcare Appointment & Scheduling Engine",
     featured: true,
     category: "Full-Stack & Systems",
     description:
-      "A production-grade delivery logistics platform with an integrated e-commerce storefront. Solves real-world supply chain and order tracking problems by pairing an online store with an automated rider dispatch engine, live GPS tracking, and a conflict-safe delivery state machine.",
+      "A production-ready healthcare management and doctor appointment platform. Provides dedicated workflows for patients, practitioners, and clinic administrators, guaranteeing conflict-free scheduling and payment-gated bookings.",
     architecture:
-      "Architected with a layered Express/TypeScript backend running on PostgreSQL via Prisma ORM, paired with a modern Next.js client. Employs transactional delivery state transitions to prevent race conditions during driver assignment, and integrates Socket.io for sub-second GPS coordinate broadcasts.",
+      "Engineered with Node.js, Express, TypeScript, and PostgreSQL. Utilizes strict database-backed slot availability validation to prevent double-booking across timezones. Containerized with Docker and continuously verified through GitHub Actions CI/CD.",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Stripe",
+      "M-Pesa",
+      "JWT Auth",
+      "Zod",
+      "Docker",
+      "GitHub Actions",
+    ],
+    live: "https://healthcare-system-eta.vercel.app",
+    repo: "https://github.com/Kabzjose/MediCare",
+    features: [
+      "Conflict-Safe Appointment Scheduling Algorithm",
+      "Dedicated Doctor & Patient Portal Dashboards",
+      "Integrated Stripe & M-Pesa Payment Checkout",
+      "Automated SMS Reminders & Status Updates",
+      "Zod Schema Validation & Role-Based Access Control",
+      "Dockerized Local Development & Automated CI/CD",
+    ],
+    color: "#0ea5e9",
+    image: mediCareImage,
+  },
+
+  {
+    title: "Reconcile",
+    tagline: "Payment Reconciliation Engine & Multi-Channel Ledger",
+    featured: true,
+    category: "Fintech & Backend",
+    description:
+      "A multi-channel payment reconciliation platform that automatically aggregates M-Pesa, bank transfers, cards, and cash payments with sales records. It automatically matches obvious transactions, explains confidence scores with evidence, and provides finance teams with a focused review queue for exceptions requiring human judgment.",
+    architecture:
+      "Engineered as a monorepo featuring a Next.js frontend (apps/web) and an Express/TypeScript backend (apps/api) powered by PostgreSQL and Prisma ORM. Implements rule-based matching algorithms, an append-only audit trail for financial decisions, batch payment statement ingestion with duplicate detection, and an integrated payment simulator for scenario stress-testing.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -96,27 +135,23 @@ export const PROJECTS = [
       "Express",
       "PostgreSQL",
       "Prisma",
-      "Socket.io",
-      "M-Pesa (Daraja)",
-      "Paystack",
+      "Docker",
+      "M-Pesa",
       "JWT",
-      "Zod",
-      "GitHub Actions",
     ],
-    live: "https://duka-ecommerce-three.vercel.app/",
-    repo: "https://github.com/Kabzjose/Duka-Ecommerce",
+    live: "https://reconsile-pi.vercel.app/",
+    repo: "https://github.com/Kabzjose/Reconsile",
     features: [
-      "Multi-Role Dashboards (Customer, Rider & Operations Admin)",
-      "Conflict-Safe Delivery State Machine (Prevents duplicate rider claims)",
-      "Dual Payment Gateways (M-Pesa Daraja STK Push & Paystack Card)",
-      "Real-Time Rider GPS Tracking via Socket.io WebSockets",
-      "Zone-Based Delivery Distance & Pricing Engine",
-      "Automated SMS Notifications for Dispatch and Delivery",
-      "Secure JWT Authentication with Refresh Token Rotation",
-      "Automated CI/CD Pipeline (GitHub Actions → Render)",
+      "Multi-Channel Transaction Aggregation (M-Pesa, Bank, Cards, Cash)",
+      "Automated Rule-Based Reconciliation & Confidence Scoring",
+      "Append-Only Audit Trail of Reconciliation Decisions",
+      "Exception Review Queue (Partial, Duplicate & Ambiguous Payments)",
+      "Batch Payment Statement Import with Duplicate Protection",
+      "Integrated Payment Scenario Simulator for Stress-Testing",
+      "Monorepo Architecture (Next.js + Express API + Prisma + Docker)",
     ],
     color: "#10b981",
-    image: dukaImage,
+    image: reconcileImage,
   },
 
   {
@@ -156,14 +191,14 @@ export const PROJECTS = [
   },
 
   {
-    title: "MediCare+",
-    tagline: "Healthcare Appointment & Scheduling Engine",
+    title: "Duka",
+    tagline: "Full-Stack Delivery & E-Commerce Platform",
     featured: true,
     category: "Full-Stack & Systems",
     description:
-      "A production-ready healthcare management and doctor appointment platform. Provides dedicated workflows for patients, practitioners, and clinic administrators, guaranteeing conflict-free scheduling and payment-gated bookings.",
+      "A production-grade delivery logistics platform with an integrated e-commerce storefront. Solves real-world supply chain and order tracking problems by pairing an online store with an automated rider dispatch engine, live GPS tracking, and a conflict-safe delivery state machine.",
     architecture:
-      "Engineered with Node.js, Express, TypeScript, and PostgreSQL. Utilizes strict database-backed slot availability validation to prevent double-booking across timezones. Containerized with Docker and continuously verified through GitHub Actions CI/CD.",
+      "Architected with a layered Express/TypeScript backend running on PostgreSQL via Prisma ORM, paired with a modern Next.js client. Employs transactional delivery state transitions to prevent race conditions during driver assignment, and integrates Socket.io for sub-second GPS coordinate broadcasts.",
     tech: [
       "Next.js",
       "TypeScript",
@@ -171,25 +206,28 @@ export const PROJECTS = [
       "Node.js",
       "Express",
       "PostgreSQL",
-      "Stripe",
-      "M-Pesa",
-      "JWT Auth",
+      "Prisma",
+      "Socket.io",
+      "M-Pesa (Daraja)",
+      "Paystack",
+      "JWT",
       "Zod",
-      "Docker",
       "GitHub Actions",
     ],
-    live: "https://healthcare-system-eta.vercel.app",
-    repo: "https://github.com/Kabzjose/MediCare",
+    live: "https://duka-ecommerce-three.vercel.app/",
+    repo: "https://github.com/Kabzjose/Duka-Ecommerce",
     features: [
-      "Conflict-Safe Appointment Scheduling Algorithm",
-      "Dedicated Doctor & Patient Portal Dashboards",
-      "Integrated Stripe & M-Pesa Payment Checkout",
-      "Automated SMS Reminders & Status Updates",
-      "Zod Schema Validation & Role-Based Access Control",
-      "Dockerized Local Development & Automated CI/CD",
+      "Multi-Role Dashboards (Customer, Rider & Operations Admin)",
+      "Conflict-Safe Delivery State Machine (Prevents duplicate rider claims)",
+      "Dual Payment Gateways (M-Pesa Daraja STK Push & Paystack Card)",
+      "Real-Time Rider GPS Tracking via Socket.io WebSockets",
+      "Zone-Based Delivery Distance & Pricing Engine",
+      "Automated SMS Notifications for Dispatch and Delivery",
+      "Secure JWT Authentication with Refresh Token Rotation",
+      "Automated CI/CD Pipeline (GitHub Actions → Render)",
     ],
-    color: "#0ea5e9",
-    image: mediCareImage,
+    color: "#10b981",
+    image: dukaImage,
   },
 
   {
@@ -257,6 +295,29 @@ export const PROJECTS = [
     ],
     color: "#8b5cf6",
     image: vChatImage,
+  },
+
+  {
+    title: "Kramhaus",
+    tagline: "Commercial & Residential Cleaning Services Platform",
+    featured: true,
+    category: "Frontend & UI",
+    isPrivate: true,
+    description:
+      "A modern, high-conversion commercial and residential cleaning services web platform built for Kramhaus. Features interactive quote requests, a comprehensive multi-service showcase (deep cleaning, post-construction, corporate, and regular housekeeping), and an intuitive mobile-first experience.",
+    architecture:
+      "Architected with Next.js App Router, React, and Tailwind CSS. Employs responsive component systems, high-performance media delivery, interactive service booking workflows, client inquiry handling, and full mobile optimization.",
+    tech: ["Next.js", "TypeScript", "Tailwind CSS", "React", "Responsive Design"],
+    live: "https://kramhaus.vercel.app/",
+    features: [
+      "Commercial & Residential Service Catalogs",
+      "Interactive Service Booking & In-App Quote Requests",
+      "Mobile-First Responsive Architecture",
+      "Fast Server-Side Rendering (SSR) & Optimized Media",
+      "Clean Modern Branding & Conversion-Optimized UX",
+    ],
+    color: "#0ea5e9",
+    image: kramhausImage,
   },
 
   {

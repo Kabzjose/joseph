@@ -144,7 +144,7 @@ function ProjectModal({ project, onClose }) {
                 LIVE DEMO ↗
               </a>
             )}
-            {project.repo && (
+            {project.repo ? (
               <a
                 href={project.repo}
                 target="_blank"
@@ -153,7 +153,11 @@ function ProjectModal({ project, onClose }) {
               >
                 GITHUB REPO ↗
               </a>
-            )}
+            ) : project.isPrivate ? (
+              <span className="inline-flex items-center gap-1.5 rounded-xl border border-slate-700 bg-slate-900/60 px-4 py-2.5 font-[Montserrat] text-xs font-medium text-slate-300">
+                🔒 Private Client Codebase
+              </span>
+            ) : null}
             {project.api && (
               <a
                 href={project.api}
@@ -259,7 +263,7 @@ function ProjectCard({ project, onOpen }) {
           >
             CASE STUDY
           </button>
-          {project.repo && (
+          {project.repo ? (
             <a
               href={project.repo}
               target="_blank"
@@ -270,7 +274,14 @@ function ProjectCard({ project, onOpen }) {
             >
               CODE
             </a>
-          )}
+          ) : project.isPrivate ? (
+            <span
+              className="rounded-lg border border-slate-800 bg-slate-900/60 px-2.5 py-2 text-center font-[Montserrat] text-[10px] font-medium tracking-wider text-slate-400"
+              title="Private Client Codebase"
+            >
+              CLIENT
+            </span>
+          ) : null}
           {project.live && (
             <a
               href={project.live}
@@ -291,23 +302,25 @@ function ProjectCard({ project, onOpen }) {
 
 /* ─── Projects Section ─────────────────────────────────────────────────── */
 const TABS = [
-  { id: "featured", label: "Featured Systems" },
   { id: "all", label: "All Projects" },
+  { id: "featured", label: "Featured Systems" },
+  { id: "backend", label: "Fintech & Backend" },
   { id: "fullstack", label: "Full-Stack & Systems" },
   { id: "ai", label: "AI & Real-Time" },
-  { id: "backend", label: "Backend & APIs" },
+  { id: "frontend", label: "Frontend & UI" },
 ];
 
 export default function Projects() {
-  const [activeTab, setActiveTab] = useState("featured");
+  const [activeTab, setActiveTab] = useState("all");
   const [selected, setSelected] = useState(null);
 
   const filteredProjects = PROJECTS.filter((p) => {
     if (activeTab === "featured") return p.featured;
     if (activeTab === "all") return true;
+    if (activeTab === "backend") return p.category === "Backend & APIs" || p.category === "Fintech & Backend";
     if (activeTab === "fullstack") return p.category === "Full-Stack & Systems";
     if (activeTab === "ai") return p.category === "AI & Real-Time" || p.category === "Real-Time & Distributed";
-    if (activeTab === "backend") return p.category === "Backend & APIs" || p.category === "Fintech & Backend";
+    if (activeTab === "frontend") return p.category === "Frontend & UI";
     return true;
   });
 
