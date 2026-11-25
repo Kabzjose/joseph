@@ -21,7 +21,7 @@ export default function Navbar({ active, setActive }) {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-slate-800/80 bg-[#090D16]/90 shadow-[0_16px_40px_rgba(0,0,0,0.5)] backdrop-blur-xl"
+          ? "border-b border-zinc-800/80 bg-black/90 shadow-[0_16px_40px_rgba(0,0,0,0.8)] backdrop-blur-xl"
           : "bg-transparent"
       }`}
     >
@@ -89,7 +89,7 @@ export default function Navbar({ active, setActive }) {
       </div>
 
       {menuOpen && (
-        <div className="border-t border-slate-800 bg-[#090D16]/95 px-5 py-4 backdrop-blur-xl md:hidden">
+        <div className="border-t border-zinc-800 bg-black/95 px-5 py-4 backdrop-blur-xl md:hidden">
           {NAV_LINKS.map((link) => (
             <button
               key={link.id}

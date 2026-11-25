@@ -87,7 +87,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative bg-[#090D16] px-6 py-28 border-t border-slate-900">
+    <section id="contact" className="relative bg-black px-6 py-28 border-t border-zinc-900">
       <div className="mx-auto w-full max-w-6xl text-center">
         <FadeIn>
           <p className="font-[Montserrat] text-xs font-semibold tracking-[0.28em] text-[#10B981]">

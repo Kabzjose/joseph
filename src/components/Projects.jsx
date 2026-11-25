@@ -32,7 +32,7 @@ function ProjectModal({ project, onClose }) {
       onClick={onBackdrop}
       className="fixed inset-0 z-[999] flex items-center justify-center p-4 bg-slate-950/85 backdrop-blur-md"
     >
-      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl border border-slate-800 bg-[#0B0F19] shadow-[0_32px_80px_rgba(0,0,0,0.85)] text-left">
+      <div className="relative w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-3xl border border-zinc-800 bg-black shadow-[0_32px_80px_rgba(0,0,0,0.95)] text-left">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -326,7 +326,7 @@ export default function Projects() {
 
   return (
     <>
-      <section id="projects" className="relative bg-[#090D16] px-6 py-28 border-t border-slate-900">
+      <section id="projects" className="relative bg-black px-6 py-28 border-t border-zinc-900">
         <div className="mx-auto w-full max-w-6xl">
           <FadeIn>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">

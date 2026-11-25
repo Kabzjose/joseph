@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <section
       id="about"
-      className="relative flex min-h-screen items-center overflow-hidden bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(255,215,0,0.14),transparent_70%),radial-gradient(ellipse_60%_50%_at_100%_100%,rgba(16,185,129,0.10),transparent_60%)] px-6 pt-28 pb-16"
+      className="relative flex min-h-screen items-center overflow-hidden bg-black bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(255,215,0,0.14),transparent_70%),radial-gradient(ellipse_60%_50%_at_100%_100%,rgba(16,185,129,0.10),transparent_60%)] px-6 pt-28 pb-16"
     >
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 md:grid-cols-[1.15fr_0.85fr]">
         <div>

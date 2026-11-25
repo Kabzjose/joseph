@@ -31,7 +31,7 @@ const WHAT_I_DO = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="relative bg-[#080C15] px-6 py-28 border-t border-slate-900">
+    <section id="skills" className="relative bg-black px-6 py-28 border-t border-zinc-900">
       <div className="mx-auto w-full max-w-6xl">
         <FadeIn>
           <div className="mb-14">

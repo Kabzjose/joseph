@@ -3,7 +3,7 @@ import { EXPERIENCE, CERTIFICATIONS, RESUME_PATH } from "../data/portfolioData";
 
 export default function Experience() {
   return (
-    <section id="experience" className="relative bg-[#080C15] px-6 py-28 border-t border-slate-900">
+    <section id="experience" className="relative bg-black px-6 py-28 border-t border-zinc-900">
       <div className="mx-auto w-full max-w-4xl">
         <FadeIn>
           <div className="mb-14 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
